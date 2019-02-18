@@ -359,3 +359,10 @@ typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:J
 // TclEventType: DG_UPDATE_GRAPH
 // Elapsed time: 147 seconds
 selectCodeEditor("ram.v", 448, 283); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH

@@ -50,16 +50,16 @@ module ram(
     always @(negedge clk) begin
         if (WE) begin
             if (mode == 0)
-                mem[address] = data_in;
+                mem[address[31:2]] = data_in;
             else
                 if (address[1:0] == 0)
-                    mem[address] = {data_in[7:0], mem[address][23:0]};
+                    mem[address[31:2]] = {data_in[7:0], mem[address[31:2]][23:0]};
                 else if (address[1:0] == 1)
-                    mem[address] = {mem[address][31:24], data_in[7:0], mem[address][15:0]};
+                    mem[address[31:2]] = {mem[address[31:2]][31:24], data_in[7:0], mem[address[31:2]][15:0]};
                 else if (address[1:0] == 2)
-                    mem[address] = {mem[address][31:16], data_in[7:0], mem[address][7:0]};
+                    mem[address[31:2]] = {mem[address[31:2]][31:16], data_in[7:0], mem[address[31:2]][7:0]};
                 else if (address[1:0] == 3)
-                    mem[address] = {mem[address][31:8], data_in[7:0]};
+                    mem[address[31:2]] = {mem[address[31:2]][31:8], data_in[7:0]};
         end
         
         if (reset) begin
