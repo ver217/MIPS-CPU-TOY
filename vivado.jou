@@ -9,3 +9,8 @@
 #-----------------------------------------------------------
 start_gui
 open_project D:/MIPS-CPU-TOY/cpu.xpr
+file mkdir D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v w ]
+add_files -fileset sim_1 D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v
+update_compile_order -fileset sim_1

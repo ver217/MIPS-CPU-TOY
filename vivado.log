@@ -17,3 +17,8 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
 open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 724.324 ; gain = 150.145
+file mkdir D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v w ]
+add_files -fileset sim_1 D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v
+update_compile_order -fileset sim_1

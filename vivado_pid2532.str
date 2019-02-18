@@ -366,3 +366,321 @@ selectCodeEditor("ram.v", 448, 283); // bj:J (JPanel:JComponent, cl:JFrame)
 // TclEventType: DG_UPDATE_GRAPH
 // TclEventType: DG_ANALYSIS_MSG_RESET
 // TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 482 seconds
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // i:l (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "aluctr.v", 3); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// [GUI Memory]: 87 MB (+26kb) [00:37:33]
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "alu.v", 4, false, true); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // P:a (Workspace:JPanel, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // ap:DockableFrame
+unMinimizeFrame(RDIResource.RDIViews_PROPERTIES, "Source File Properties"); // ap:DockableFrame
+// Elapsed time: 36 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 15); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 16); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top (top.v)]", 19); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top (top.v), mainctr - ctr (ctr.v)]", 20, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top (top.v), mainctr - ctr (ctr.v)]", 20, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top (top.v)]", 19); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Non-module Files]", 18); // A:k (H:JPanel, cl:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Non-module Files]", 18); // A:k (H:JPanel, cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files]", 17); // A:k (H:JPanel, cl:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files]", 17); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 16, true); // A:k (H:JPanel, cl:JFrame) - Node
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), dmem - ram (ram.v)]", 9, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), dmem - ram (ram.v)]", 9, false, false, false, false, true, false); // A:k (H:JPanel, cl:JFrame) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 15, true); // A:k (H:JPanel, cl:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 15, true, false, false, false, true, false); // A:k (H:JPanel, cl:JFrame) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // X:JMenu (ai:JPopupMenu, cl:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_ADD_SOURCES, "Add Sources..."); // ab:JMenuItem (ai:JPopupMenu, cl:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (cl:JFrame): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // w:JideButton (CommandBar:DockableBar, b:g)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File..."); // ab:JMenuItem (ai:JPopupMenu, b:g)
+// I:ag (b:g): Create Source File: addNotify
+// Elapsed time: 31 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "ram_sim"); // ao:JTextField (JPanel:JComponent, I:ag)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, I:ag)
+dismissDialog("Create Source File"); // I:ag (b:g)
+// Tcl Message: file mkdir D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new 
+selectTable(PAResourceQtoS.SrcChooserTable_SRC_CHOOSER_TABLE, "VerilogSourceFile_small ; 1 ; ram_sim.v ; xil_defaultlib ; <Local to Project>", 0, "xil_defaultlib", 3); // bD:v (JViewport:JComponent, b:g)
+editTable(PAResourceQtoS.SrcChooserTable_SRC_CHOOSER_TABLE, "xil_defaultlib", 0, "Library", 3); // bD:v (JViewport:JComponent, b:g)
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'f' command handler elapsed time: 49 seconds
+dismissDialog("Add Sources"); // b:g (cl:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// Tcl Message: close [ open D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset sim_1 D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v 
+// L:ag (cl:JFrame): Define Module: addNotify
+// Elapsed time: 15 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, L:ag)
+// HMemoryUtils.trashcanNow. Engine heap size: 495 MB. GUI used memory: 43 MB. Current time: 2/18/19 9:22:14 PM CST
+// TclEventType: DG_GRAPH_STALE
+selectButton("PAResourceAtoD.DefineModulesDialog_YOU_HAVE_MADE_CHANGES_TO_MODULE_Yes", "Yes"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, U:JDialog)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // L:ag (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, ram_sim (ram_sim.v)]", 20, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, ram_sim (ram_sim.v)]", 20, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectCodeEditor("ram_sim.v", 292, 214); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 151, 428); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 150, 454); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 29 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, top.v]", 2, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, top.v]", 2, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ram_sim.v", 6); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("top.v", 45, 84); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "top.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ram_sim.v", 6); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+typeControlKey((HResource) null, "ram_sim.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 56, 462); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 29 seconds
+selectCodeEditor("ram_sim.v", 105, 462); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 104, 463); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 34 seconds
+typeControlKey((HResource) null, "ram_sim.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "ram_sim.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 46, 464); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 171, 465); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 108, 463); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 108, 463, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ram_sim.v", 121, 466); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 121, 466, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "ram_sim.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 116, 522); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 116, 522, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "ram_sim.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 193, 519); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram_sim.v", 161, 461); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 161, 461, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ram_sim.v", 239, 467); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 43 seconds
+typeControlKey((HResource) null, "ram_sim.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "ram_sim.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 20 seconds
+selectCodeEditor("ram_sim.v", 139, 568); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 45 seconds
+selectCodeEditor("ram_sim.v", 103, 359); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 103, 359, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "ram_sim.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 159, 514); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 159, 514, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ram_sim.v", 154, 503); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 154, 503, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "ram_sim.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 199, 502); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram_sim.v", 175, 470); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 147, 483); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 137, 462); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 86, 467); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 86, 467, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ram_sim.v", 177, 465); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram_sim.v", 172, 487); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 154, 372); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 96, 488); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 96, 488, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram_sim.v", 97, 455); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 97, 455, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 58 seconds
+typeControlKey((HResource) null, "ram_sim.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 13 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files]", 17); // A:k (H:JPanel, cl:JFrame)
+selectCodeEditor("ram_sim.v", 269, 545); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 275, 526); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 92 MB (+103kb) [00:46:23]
+// Elapsed time: 49 seconds
+selectCodeEditor("ram_sim.v", 44, 524); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 44, 524, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ram_sim.v", 44, 524); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 44, 524); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 44, 524); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 47, 524); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 49, 533); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 32, 515); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 32, 515, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "ram_sim.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 216, 519); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+// Elapsed time: 18 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false, false, false, false, true, false); // A:k (H:JPanel, cl:JFrame) - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+// Elapsed time: 15 seconds
+unMinimizeFrame(PAResourceOtoP.PAViews_TCL_CONSOLE, "Tcl Console"); // ap:DockableFrame
+// Elapsed time: 22 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sim_1, [HDL 9-806] Syntax error near forever. [D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:37]. ]", 13, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sim_1, [HDL 9-806] Syntax error near forever. [D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:37]. , [HDL 9-806] Syntax error near assign. [D:/MIPS-CPU-TOY/cpu.srcs/sources_1/new/top.v:101]. ]", 14, false, false, false, false, false, true); // ae:k (JViewport:JComponent, cl:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sim_1, [HDL 9-806] Syntax error near forever. [D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:37]. ]", 13, true); // ae:k (JViewport:JComponent, cl:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;D:\MIPS-CPU-TOY\cpu.srcs\sim_1\new\ram_sim.v;-;;-;16;-;line;-;37;-;;-;16;-;"); // ae:k (JViewport:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 73, 290); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 53 seconds
+selectCodeEditor("ram_sim.v", 789, 207); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 28, 295); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 28, 295, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram_sim.v", 190, 304); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 39, 287); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 39, 287, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 514 MB. GUI used memory: 47 MB. Current time: 2/18/19 9:31:25 PM CST
+// [Engine Memory]: 514 MB (+2040kb) [00:49:15]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+// Elapsed time: 21 seconds
+selectCodeEditor("ram_sim.v", 758, 267); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 140, 295); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 59, 253); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram_sim.v", 79, 327); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 26, 310); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 26, 310, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+selectCodeEditor("ram_sim.v", 86, 320); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 53, 311); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 53, 311, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 97 MB (+1013kb) [00:50:04]
+selectCodeEditor("ram_sim.v", 219, 328); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 221, 315); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 59 seconds
+selectCodeEditor("ram_sim.v", 76, 271); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 99, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 98, 244); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 155, 310); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 155, 297); // bj:J (JPanel:JComponent, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Syntax Error Files, ram_sim.v]", 18, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectCodeEditor("ram_sim.v", 93, 264); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 13 seconds
+selectCodeEditor("ram_sim.v", 189, 299); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 46, 275); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram_sim.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 176, 289); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram_sim.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 95, 337); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 185, 323); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram_sim.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 97, 386); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 213, 304); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 213, 299); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram_sim.v", 236, 252); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram_sim.v", 226, 247); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram_sim.v", 227, 238); // bj:J (JPanel:JComponent, cl:JFrame)
