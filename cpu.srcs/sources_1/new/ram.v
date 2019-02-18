@@ -25,16 +25,23 @@ module ram(
     input [0:31] data_in,
     input WE,
     input clk,
+    input reset,
     output [0:31] data_out
     );
     
-    reg[31:0] mem[0:4095];
+    parameter SIZE = 4096;
+    reg[31:0] mem[0:SIZE - 1];
     
     assign data_out = mem[address];
+    integer i;
     
     always @(negedge clk) begin
         if (WE) begin
             mem[address] = data_in;
         end
-     end
+        
+        if (reset) begin
+            for (i = 0; i < SIZE; i = i + 1) mem[i] <= 0;
+        end
+    end
 endmodule

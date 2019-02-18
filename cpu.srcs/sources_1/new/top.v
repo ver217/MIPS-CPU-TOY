@@ -61,19 +61,20 @@ module top(
 		.aluCtr(aluCtr)
 	);
 	
-//	dram dmem(
-//		.a(aluRes[7:2]),
-//		.d(RtData),
-//		.clk(!clkin),
-//		.we(memwrite),
-//		.spo(memreaddata)
-//	);
+	ram dmem(
+		.address(aluRes[7:2]),
+		.data_in(RtData),
+		.clk(!clkin),
+		.WE(memwrite),
+		.reset(reset),
+		.data_out(memreaddata)
+	);
 
-//	irom imem(
-//		.a(pc[8:2]), 
+	rom imem(
+		.address(pc[8:2]), 
 //		.clk(clkin), 
-//		.spo(inst)
-//	 );
+		.data_out(inst)
+	 );
 
 	regFile regfile(
 		.RsAddr(inst[25:21]),

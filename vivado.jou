@@ -2,20 +2,12 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Mon Feb 18 16:21:34 2019
-# Process ID: 3324
+# Start of session at: Mon Feb 18 16:47:20 2019
+# Process ID: 4564
 # Log file: C:/Users/Administrator/MIPS-CPU-TOY/vivado.log
 # Journal file: C:/Users/Administrator/MIPS-CPU-TOY\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Administrator/MIPS-CPU-TOY/cpu.xpr
-file mkdir C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new
-close [ open C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/mem.v w ]
-add_files C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/mem.v
 update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-close [ open C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/rom.v w ]
-add_files C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/rom.v
 update_compile_order -fileset sources_1

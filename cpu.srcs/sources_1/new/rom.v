@@ -22,7 +22,10 @@
 
 module rom(
     input [0:31] address,
-    input clk,
+//    input clk,
     output [0:31] data_out
     );
+    
+    reg[31:0] mem[0:4095];
+    assign data_out = mem[address];
 endmodule
