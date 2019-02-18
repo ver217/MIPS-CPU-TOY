@@ -1,33 +1,46 @@
 module alu(
-    input [31:0] input1,
-    input [31:0] input2,
-    input [3:0] aluCtr,
-    output reg [31:0] aluRes,
-    output reg zero
+    input [31:0] x,
+    input [31:0] y,
+    input [3:0] aluOp,
+	input [4:0] shamt,
+    output reg [31:0] result,
+    output equal
     );
-	always @(input1 or input2 or aluCtr)	begin
-		case (aluCtr)
+	always @(x or y or aluOp) begin
+		case (aluOp)
 			4'b0000:
-				aluRes = input1 & input2;
+				result = x << shamt;
 			4'b0001:
-				aluRes = input1 | input2;
+				result = ( { {31{x[31]}}, 1'b0 } << shamt ) | ( x >> shamt );
 			4'b0010:
-				aluRes = input1 + input2;
-			4'b0110:	begin
-				aluRes = input1 - input2;
-				if (aluRes == 0)
-					zero = 1;
+				result = x >> shamt;
+			4'b0101:
+				result = x + y;
+			4'b0110:
+				result = x - y;
+			4'b0111:
+				result = x & y;
+			4'b1000:
+				result = x | y;
+			4'b1001:
+				result = x ^ y;
+			4'b1010:
+				result = ~(x | y);
+			4'b1011: begin
+				if (x[31] == 1 && y[31] == 0)
+					result = 32'b1;
+				else if (x[31] == 1 && y[31] == 1)
+					result = (x > y) ? 32'b1 : 32'b0;
+				else if (x[31] == 0 && y[31] == 1)
+					result = 32'b0;
 				else
-					zero = 0;
+					result = (x < y) ? 32'b1 : 32'b0;
 			end
-			4'b0111:	begin
-				if (input1 < input2)
-					aluRes = 1;
-				else
-					aluRes = 0;
-			end
+			4'b1100: 
+				result = (x < y) ? 32'b1 : 32'b0;
 			default:
-				aluRes = 0;
+				result = 0;
 		endcase
 	end
+	assign equal = (x == y);
 endmodule
