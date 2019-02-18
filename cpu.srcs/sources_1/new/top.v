@@ -3,29 +3,28 @@ module top(
     input reset
     );
 	reg[31:0] pc, add4;
-	wire choose4;
-	wire [31:0] expand2, mux2, mux3, mux4, mux5, address, jmpaddr, inst;
-	wire [4:0] mux1;
+	wire branch;
+	wire [31:0] inst;
+	wire [31:0] jmpMux, branchMux, jrMux, aluSrcMux, signedExtMux, memToRegMux, jalMux1;
+	wire [4:0] sysMux, dispMux, regDstMux, jalMux;
 	// wire for controller
-	wire reg_dst, jmp, branch, memread, memwrite, memtoreg;
-	wire [1:0] aluop;
-	wire alu_src, regwrite;
-	// wire for aluunit
-	wire zero;
+	wire memToReg, memWrite, aluSrc, regWrite, syscall, signedExt, regDst, beq, bne, jr, jmp, jal;
+	wire [3:0] aluOp;
+	// wire for alu
+	wire equal;
 	wire [31:0] aluRes;
-	// wire for aluctr
-	wire [3:0] aluCtr;
-	// wire for memory
-	wire [31:0] memreaddata;
+	// wire for rom
+	wire [31:0] memOut;
 	// wire for register
-	wire [31:0] RsData, RtData;
+	wire [31:0] r1, r2;
 	// wire for ext
-	wire [31:0] expand;
+	wire [31:0] signedExted;
+	wire [31:0] zeroExted;
 	
 	always @(negedge clkin)
 		begin
 			if(!reset) begin
-				pc = mux5;
+				pc = jmpMux;
 				add4  =  pc+4;
 			end
 		else	begin
@@ -35,39 +34,38 @@ module top(
 	end
 	
 	ctr mainctr(
-		.opCode(inst[31:26]),
-		.regDst(reg_dst), 
-		.aluSrc(alu_src),
-		.memToReg(memtoreg),
-		.regWrite(regwrite), 
-		.memRead(memread), 
-		.memWrite(memwrite), 
-		.branch(branch),
-		.aluOp(aluop),
-		.jump(jmp)
+		inst,
+		memToReg,
+		memWrite,
+		aluSrc,
+		regWrite,
+		syscall,
+		signedExt,
+		regDst,
+		beq,
+		bne,
+		jr,
+		jmp,
+		jal,
+		aluOp
 	);
 	
 	alu alu(
-		.input1(RsData),
-		.input2(mux2),
-		.aluCtr(aluCtr), 
-		.aluRes(aluRes),
-		.zero(zero)
-	);
-	
-	aluctr aluctrl( 
-		.aluOp(aluop), 
-		.funct(inst[5:0]),
-		.aluCtr(aluCtr)
+		.x(r1),
+		.y(aluSrcMux),
+		.aluOp(aluOp),
+		.shamt(inst[10:6]),
+		.result(aluRes),
+		.equal(equal)
 	);
 	
 	ram dmem(
 		.address(aluRes[7:2]),
-		.data_in(RtData),
+		.data_in(r2),
 		.clk(!clkin),
-		.WE(memwrite),
+		.WE(memWrite),
 		.reset(reset),
-		.data_out(memreaddata)
+		.data_out(memOut)
 	);
 
 	rom imem(
@@ -77,34 +75,36 @@ module top(
 	 );
 
 	regFile regfile(
-		.RsAddr(inst[25:21]),
-		.RtAddr(inst[20:16]),
+		.RsAddr(sysMux),
+		.RtAddr(dispMux),
 		.clk(!clkin), 
 		.reset(reset), 
-		.regWriteAddr(mux1), 
-		.regWriteData(mux3), 
-		.regWriteEn(regwrite),
-		.RsData(RsData),
-		.RtData(RtData)
+		.regWriteAddr(jalMux), 
+		.regWriteData(jalMux1), 
+		.regWriteEn(regWrite),
+		.RsData(r1),
+		.RtData(r2)
 	);
 	
 	signext signext(
 		.inst(inst[15:0]),
-		.data(expand)
+		.data(signedExted)
 	 );
 
 	zeroext zeroext(
 		.inst(inst[15:0]),
-		.data(expand)
-	)
-	 
-	assign mux1 = reg_dst ? inst[15:11] : inst[20:16]; 
-	assign mux2 = alu_src ? expand : RtData;
-	assign mux3 = memtoreg ? memreaddata : aluRes; 
-	assign mux4 = choose4 ? address : add4;
-	assign mux5 = jmp ? jmpaddr : mux4;
-	assign choose4 = branch & zero;
-	assign expand2 = expand << 2;
-	assign jmpaddr = {add4[31:28], inst[25:0], 2'b00}; 
-	assign address = pc + expand2;
+		.data(zeroExted)
+	);
+	assign branch = (beq & equal) | (bne & (~equal));
+	assign jmpMux = jmp ? jrMux : branchMux;
+	assign branchMux = branch ? (signedExted << 2) + add4 : add4;
+	assign jrMux = jr ? r1 : {add4[31:22], inst[25:0], 2'b00};
+	assign aluSrcMux = aluSrc ? signedExtMux : r2;
+	assign signedExtMux = signedExt ? signedExted : zeroExted;
+	assign memToRegMux = memToReg ? memOut : aluRes;
+	assign jalMux1 = jal ? add4 : memToRegMux;
+	assign sysMux = syscall ? 2 : inst[25:21];
+	assign dispMux = inst[20:16];
+	assign regDstMux = regDst ? inst[15:11] : inst[20:16];
+	assign jalMux = jal ? 31 : regDstMux;
 endmodule
