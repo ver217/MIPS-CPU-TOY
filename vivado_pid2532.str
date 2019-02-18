@@ -684,3 +684,14 @@ selectCodeEditor("ram_sim.v", 236, 252); // bj:J (JPanel:JComponent, cl:JFrame)
 // TclEventType: DG_UPDATE_GRAPH
 selectCodeEditor("ram_sim.v", 226, 247); // bj:J (JPanel:JComponent, cl:JFrame)
 selectCodeEditor("ram_sim.v", 227, 238); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
