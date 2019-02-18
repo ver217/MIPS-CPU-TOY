@@ -92,6 +92,11 @@ module top(
 		.inst(inst[15:0]),
 		.data(expand)
 	 );
+
+	zeroext zeroext(
+		.inst(inst[15:0]),
+		.data(expand)
+	)
 	 
 	assign mux1 = reg_dst ? inst[15:11] : inst[20:16]; 
 	assign mux2 = alu_src ? expand : RtData;
