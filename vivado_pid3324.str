@@ -266,3 +266,5 @@ dismissDialog("Define Module"); // L:ag (cl:JFrame)
 // TclEventType: DG_UPDATE_GRAPH
 // Tcl Message: update_compile_order -fileset sources_1 
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ram (mem.v)]", 1, false); // A:k (H:JPanel, cl:JFrame)
+// [GUI Memory]: 74 MB (+2kb) [00:20:46]
+// [GUI Memory]: 79 MB (+793kb) [00:22:47]
