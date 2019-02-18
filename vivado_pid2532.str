@@ -1,0 +1,368 @@
+/*
+
+Vivado v2015.2 (64-bit)
+SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+Process ID: 2532
+
+Current time: 	2/18/19 8:42:19 PM CST
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 7
+Version: 6.1
+Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1600x900
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=SimSun,name=ËÎÌו,style=plain,size=12
+
+Java version: 	1.8.0_25 64-bit
+Java home: 	C:/Xilinx/Vivado/2015.2/tps/win64/jre
+
+User name: 	Administrator
+User directory: D:/MIPS-CPU-TOY
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+Vivado preferences path: C:/Users/Administrator/AppData/Roaming/Xilinx/Vivado/2015.2/vivado.ini
+Vivado layouts directory: C:/Users/Administrator/AppData/Roaming/Xilinx/Vivado/2015.2/layouts/application
+
+GUI allocated memory:	179 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 381 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// cp:P (cl:JFrame):  Open Project : addNotify
+// Opening Vivado Project: D:\MIPS-CPU-TOY\cpu.xpr. Version: Vivado v2015.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/MIPS-CPU-TOY/cpu.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// [GUI Memory]: 43 MB (+42894kb) [00:00:07]
+// [Engine Memory]: 365 MB (+231324kb) [00:00:07]
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/MIPS-CPU-TOY/cpu.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'F:/Applications/vivado/cpu' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 399 MB. GUI used memory: 27 MB. Current time: 2/18/19 8:42:21 PM CST
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 409 MB (+27134kb) [00:00:11]
+// [GUI Memory]: 52 MB (+6591kb) [00:00:12]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 434 MB (+4126kb) [00:00:13]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: cpu; location: D:/MIPS-CPU-TOY; part: xc7a100tcsg324-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 724.324 ; gain = 150.145 
+dismissDialog("Open Project"); // cp:P (cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// a:a (cl:JFrame): Critical Messages: addNotify
+// [Engine Memory]: 456 MB (+1134kb) [00:00:16]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, top.v]", 2, false); // A:k (H:JPanel, cl:JFrame)
+// [GUI Memory]: 55 MB (+815kb) [00:00:17]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, top.v]", 2, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+dismissDialog("Critical Messages"); // a:a (cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, top.v]", 2, false); // A:k (H:JPanel, cl:JFrame)
+// [GUI Memory]: 61 MB (+3163kb) [00:00:20]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, top.v]", 2, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 3); // A:k (H:JPanel, cl:JFrame)
+// [GUI Memory]: 64 MB (+291kb) [00:00:26]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, zeroext.v]", 4, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, zeroext.v]", 4, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+// ab:ah (cl:JFrame): Unable to Open File: addNotify
+dismissDialog("Unable to Open File"); // ab:ah (cl:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v)]", 5); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), imem - rom (rom.v)]", 10, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), dmem - ram (ram.v)]", 9, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), dmem - ram (ram.v)]", 9, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectCodeEditor("ram.v", 187, 233); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 159, 195); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 223, 163); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 229, 176); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 59 seconds
+selectCodeEditor("ram.v", 304, 200); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 19 seconds
+selectCodeEditor("ram.v", 128, 145); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ram.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ram.v", 277, 135); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 37 seconds
+selectCodeEditor("ram.v", 270, 253); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 110 seconds
+selectCodeEditor("ram.v", 237, 44); // bj:J (JPanel:JComponent, cl:JFrame)
+// [GUI Memory]: 68 MB (+442kb) [00:05:00]
+selectCodeEditor("ram.v", 369, 323); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 369, 319); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 54 seconds
+selectCodeEditor("ram.v", 269, 148); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 229, 142); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 388, 143); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 388, 143, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 476, 140); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("ram.v", 479, 159); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 473, 147); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 151 seconds
+selectCodeEditor("ram.v", 130, 149); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 116, 163); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 120, 159); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 111, 157); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 68, 202); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 234 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Elaboration Settings]", 13, false, false, false, false, true, false); // w:Y (v:H, cl:JFrame) - Popup Trigger
+// [GUI Memory]: 72 MB (+690kb) [00:12:55]
+// HMemoryUtils.trashcanNow. Engine heap size: 473 MB. GUI used memory: 35 MB. Current time: 2/18/19 8:55:07 PM CST
+selectCodeEditor("ram.v", 83, 200); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 203, 207); // bj:J (JPanel:JComponent, cl:JFrame)
+// [Engine Memory]: 487 MB (+8483kb) [00:13:07]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ram.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ram.v", 277, 222); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 97 seconds
+selectCodeEditor("ram.v", 83, 202); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 107, 240); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 16 seconds
+selectCodeEditor("ram.v", 107, 217); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 130, 258); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 95, 233); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 264, 277, false, true, false, false, false); // bj:J (JPanel:JComponent, cl:JFrame) - Control Key
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 239, 292); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 13 seconds
+selectCodeEditor("ram.v", 230, 276); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 39 seconds
+selectCodeEditor("ram.v", 120, 216); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 174, 264); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 141, 235); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 258, 269); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 23 seconds
+selectCodeEditor("ram.v", 279, 300); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 356, 274); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram.v", 324, 322); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 329, 306); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 331, 287); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 300, 312); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 308, 299); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 38 seconds
+selectCodeEditor("ram.v", 155, 216); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 21 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ram.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+selectCodeEditor("ram.v", 250, 255); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 162 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), aluctrl - aluctr (aluctr.v)]", 8, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), aluctrl - aluctr (aluctr.v)]", 8, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), alu - alu (alu.v)]", 7, false); // A:k (H:JPanel, cl:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), alu - alu (alu.v)]", 7, false, false, false, false, false, true); // A:k (H:JPanel, cl:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ram.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// [GUI Memory]: 76 MB (+723kb) [00:20:51]
+selectCodeEditor("ram.v", 206, 239); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 69, 316); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 389, 316); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 183, 230); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 165, 251); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 256, 261); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 240, 234); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 241, 260); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 323, 191); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 306, 216); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 26 seconds
+selectCodeEditor("ram.v", 223, 253); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 229, 257); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 62 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ram.v", 2); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram.v", 268, 267); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 350, 274); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 357, 252); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 93, 259); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 171, 266); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 95, 256); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 187, 259); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 192, 261); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 30 seconds
+selectCodeEditor("ram.v", 446, 297); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 446, 296, false, false, false, false, true); // bj:J (JPanel:JComponent, cl:JFrame) - Double Click
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("ram.v", 417, 316); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 289, 309); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 293, 294); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 15 seconds
+selectCodeEditor("ram.v", 107, 218); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 122, 257); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 449, 276); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 211, 310); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 126, 316); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 437, 316); // bj:J (JPanel:JComponent, cl:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("ram.v", 117, 313); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 378, 328); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 118, 314); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 317, 337); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 316, 349); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 120, 142); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 327, 221); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 142, 257); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// [GUI Memory]: 83 MB (+2919kb) [00:25:09]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 18 seconds
+selectCodeEditor("ram.v", 334, 162); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 215, 163); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 20 seconds
+selectCodeEditor("ram.v", 303, 196); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 213, 199); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 288, 207); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 215, 198); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 422, 203); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 416, 206); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 422, 197); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 547, 198); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 516, 193); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 37 seconds
+selectCodeEditor("ram.v", 510, 193); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 425, 196); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'c'); // bj:J (JPanel:JComponent, cl:JFrame)
+selectCodeEditor("ram.v", 421, 236); // bj:J (JPanel:JComponent, cl:JFrame)
+typeControlKey((HResource) null, "ram.v", 'v'); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 147 seconds
+selectCodeEditor("ram.v", 448, 283); // bj:J (JPanel:JComponent, cl:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
