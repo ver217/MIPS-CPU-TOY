@@ -11,7 +11,8 @@ module alu(
 			4'b0000:
 				result = x << shamt;
 			4'b0001:
-				result = ( { {31{x[31]}}, 1'b0 } << (~shamt) ) | ( x >> shamt );
+				// result = ( { {31{x[31]}}, 1'b0 } << (~shamt) ) | ( x >> shamt );
+				result = $signed(x) >>> shamt;
 			4'b0010:
 				result = x >> shamt;
 			4'b0101:

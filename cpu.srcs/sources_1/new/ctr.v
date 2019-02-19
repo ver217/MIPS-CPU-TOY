@@ -113,6 +113,7 @@ module ctr(
 				jr <= 0;
 				jmp <= 0;
 				jal <= 0;	
+				aluOp <= 5;
 			end
 			12: begin	// andi
 				memToReg <= 0;
@@ -127,6 +128,7 @@ module ctr(
 				jr <= 0;
 				jmp <= 0;
 				jal <= 0;	
+				aluOp <= 7;
 			end
 			9: begin	// addiu
 				memToReg <= 0;
@@ -141,6 +143,7 @@ module ctr(
 				jr <= 0;
 				jmp <= 0;
 				jal <= 0;	
+				aluOp <= 5;
 			end
 			10: begin	// slti
 				memToReg <= 0;
@@ -155,6 +158,7 @@ module ctr(
 				jr <= 0;
 				jmp <= 0;
 				jal <= 0;	
+				aluOp <= 11;
 			end
 			13: begin	// ori
 				memToReg <= 0;
@@ -169,6 +173,7 @@ module ctr(
 				jr <= 0;
 				jmp <= 0;
 				jal <= 0;	
+				aluOp <= 8;
 			end
 			35: begin	// lw
 				memToReg <= 1;
@@ -183,6 +188,7 @@ module ctr(
 				jr <= 0;
 				jmp <= 0;
 				jal <= 0;	
+				aluOp <= 5;
 			end
 			43: begin	// sw
 				memToReg <= 0;
@@ -197,6 +203,7 @@ module ctr(
 				jr <= 0;
 				jmp <= 0;
 				jal <= 0;	
+				aluOp <= 5;
 			end
 			default: begin
 				aluOp = 0;
