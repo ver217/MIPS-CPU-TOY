@@ -62,7 +62,7 @@ module top(
 	ram dmem(
 		.address(aluRes),
 		.data_in(r2),
-		.clk(!clkin),
+		.clk(clkin),
 		.WE(memWrite),
 		.reset(reset),
 		.mode(0),
