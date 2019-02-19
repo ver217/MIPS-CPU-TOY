@@ -69,10 +69,17 @@ module top(
 		.data_out(memOut)
 	);
 
-	rom imem(
-		.address(pc), 
-//		.clk(clkin), 
-		.data_out(inst)
+//	rom imem(
+//		.address(pc), 
+////		.clk(clkin), 
+//		.data_out(inst)
+//	 );
+	 
+	 blk_mem_gen_0 rom(
+	       .clka(clkin),
+	       .ena(1),
+	       .addra(pc[11:0] >> 2),
+	       .douta(inst)
 	 );
 
 	regFile regfile(
