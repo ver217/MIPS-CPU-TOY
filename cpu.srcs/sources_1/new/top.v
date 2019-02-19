@@ -2,7 +2,7 @@ module top(
     input clkin, 
     input reset
     );
-	reg[31:0] pc, add4;
+	reg[31:0] pc = 0, add4 = 4;
 	wire branch;
 	wire [31:0] inst;
 	wire [31:0] jmpMux, branchMux, jrMux, aluSrcMux, signedExtMux, memToRegMux, jalMux1;
