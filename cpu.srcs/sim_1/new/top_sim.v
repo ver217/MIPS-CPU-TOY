@@ -22,10 +22,14 @@
 
 module top_sim();
     reg clk = 0;
+    reg reset = 0;
+    reg[31:0] clk_count = 0;
     top TOP(
        .clkin(clk),
        .reset(0)
        );
        
+    always @(posedge clk) clk_count = clk_count + 1;
+ 
     always #10 clk=~clk;
 endmodule
