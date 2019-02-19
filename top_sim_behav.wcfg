@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="24" />
    <wvobject db_ref_id="1" fp_name="/top_sim/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -45,7 +45,7 @@
    <wvobject db_ref_id="1" fp_name="/top_sim/TOP/pc" type="array">
       <obj_property name="ElementShortName">pc[31:0]</obj_property>
       <obj_property name="ObjectShortName">pc[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/mem[0]" type="array">
       <obj_property name="ElementShortName">[0][31:0]</obj_property>
@@ -86,5 +86,41 @@
       <obj_property name="ElementShortName">[7][31:0]</obj_property>
       <obj_property name="ObjectShortName">mem[7][31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/mainctr/jr" type="logic">
+      <obj_property name="ElementShortName">jr</obj_property>
+      <obj_property name="ObjectShortName">jr</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/mainctr/jmp" type="logic">
+      <obj_property name="ElementShortName">jmp</obj_property>
+      <obj_property name="ObjectShortName">jmp</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/mainctr/jal" type="logic">
+      <obj_property name="ElementShortName">jal</obj_property>
+      <obj_property name="ObjectShortName">jal</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/regfile/regs[31]" type="array">
+      <obj_property name="ElementShortName">[31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">regs[31][31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/jalMux1" type="array">
+      <obj_property name="ElementShortName">jalMux1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">jalMux1[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/regfile/regWriteData" type="array">
+      <obj_property name="ElementShortName">regWriteData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regWriteData[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/regfile/regWriteEn" type="logic">
+      <obj_property name="ElementShortName">regWriteEn</obj_property>
+      <obj_property name="ObjectShortName">regWriteEn</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/regfile/regWriteAddr" type="array">
+      <obj_property name="ElementShortName">regWriteAddr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">regWriteAddr[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

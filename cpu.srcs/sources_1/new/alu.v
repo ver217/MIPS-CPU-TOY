@@ -28,14 +28,15 @@ module alu(
 			4'b1010:
 				result = ~(x | y);
 			4'b1011: begin
-				if (x[31] == 1 && y[31] == 0)
-					result = 32'b1;
-				else if (x[31] == 1 && y[31] == 1)
-					result = (x > y) ? 32'b1 : 32'b0;
-				else if (x[31] == 0 && y[31] == 1)
-					result = 32'b0;
-				else
-					result = (x < y) ? 32'b1 : 32'b0;
+//				if (x[31] == 1 && y[31] == 0)
+//					result = 32'b1;
+//				else if (x[31] == 1 && y[31] == 1)
+//					result = (x > y) ? 32'b1 : 32'b0;
+//				else if (x[31] == 0 && y[31] == 1)
+//					result = 32'b0;
+//				else
+//					result = (x < y) ? 32'b1 : 32'b0;
+                result = $signed(x) < $signed(y) ? 32'b1 : 32'b0;
 			end
 			4'b1100: 
 				result = (x < y) ? 32'b1 : 32'b0;

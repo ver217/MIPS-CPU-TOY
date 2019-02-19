@@ -85,7 +85,7 @@ module top(
 	regFile regfile(
 		.RsAddr(sysMux),
 		.RtAddr(dispMux),
-		.clk(!clkin), 
+		.clk(clkin), 
 		.reset(reset), 
 		.regWriteAddr(jalMux), 
 		.regWriteData(jalMux1), 
