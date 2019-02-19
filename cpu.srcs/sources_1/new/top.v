@@ -99,7 +99,7 @@ module top(
 	assign branch = (beq & equal) | (bne & (~equal));
 	assign jmpMux = jmp ? jrMux : branchMux;
 	assign branchMux = branch ? (signedExted << 2) + add4 : add4;
-	assign jrMux = jr ? r1 : {add4[31:22], inst[25:0], 2'b00};
+	assign jrMux = jr ? r1 : {add4[31:28], inst[25:0], 2'b00};
 	assign aluSrcMux = aluSrc ? signedExtMux : r2;
 	assign signedExtMux = signedExt ? signedExted : zeroExted;
 	assign memToRegMux = memToReg ? memOut : aluRes;
