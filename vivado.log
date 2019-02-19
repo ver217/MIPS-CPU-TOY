@@ -2,24 +2,748 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Mon Feb 18 20:42:03 2019
-# Process ID: 2532
-# Log file: D:/MIPS-CPU-TOY/vivado.log
-# Journal file: D:/MIPS-CPU-TOY\vivado.jou
+# Start of session at: Tue Feb 19 08:10:31 2019
+# Process ID: 3292
+# Log file: C:/Users/Administrator/MIPS-CPU-TOY/vivado.log
+# Journal file: C:/Users/Administrator/MIPS-CPU-TOY\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project D:/MIPS-CPU-TOY/cpu.xpr
-INFO: [Project 1-313] Project file moved from 'F:/Applications/vivado/cpu' since last save.
-CRITICAL WARNING: [Project 1-311] Could not find the file 'D:/MIPS-CPU-TOY/cpu.srcs/sources_1/new/zeroext.v', nor could it be found using path 'F:/Applications/vivado/cpu/cpu.srcs/sources_1/new/zeroext.v'.
+open_project C:/Users/Administrator/MIPS-CPU-TOY/cpu.xpr
+INFO: [Project 1-313] Project file moved from 'D:/MIPS-CPU-TOY' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/aluctr.v', nor could it be found using path 'D:/MIPS-CPU-TOY/cpu.srcs/sources_1/new/aluctr.v'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
-open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 724.324 ; gain = 150.145
-file mkdir D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v w ]
-add_files -fileset sim_1 D:/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:25 . Memory (MB): peak = 632.535 ; gain = 68.621
+set_property top ram_sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
 update_compile_order -fileset sim_1
-update_compile_order -fileset sources_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net data_out is not permitted [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:38]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:39]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:40]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:41]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:42]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:43]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:44]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:45]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:46]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:53]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:55]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:56]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:57]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:58]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:59]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:60]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:61]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:62]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net data_out is not permitted [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:39]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:40]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:41]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:42]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:43]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:44]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:45]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:46]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:53]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:55]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:56]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:57]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:58]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:59]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:60]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:61]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:62]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net data_out is not permitted [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:40]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:42]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:44]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:46]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:53]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:55]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:56]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:57]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:58]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:59]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:60]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:61]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:62]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net data_out is not permitted [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:42]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:44]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:46]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:53]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:55]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:56]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:57]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:58]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:59]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:60]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:61]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:62]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net data_out is not permitted [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:53]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:55]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:56]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:57]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:58]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:59]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:60]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:61]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:62]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net data_out is not permitted [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:56]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:57]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:58]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:59]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:60]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:61]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v:62]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net data_out is not permitted [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/elaborate.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.ram_sim
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot ram_sim_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Feb 19 08:30:58 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Feb 19 08:30:58 2019...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 690.496 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ram_sim_behav -key {Behavioral:sim_1:Functional:ram_sim} -tclbatch {ram_sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source ram_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ram_sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 698.980 ; gain = 8.484
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port mode [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.ram_sim
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot ram_sim_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Feb 19 08:34:57 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Feb 19 08:34:57 2019...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ram_sim_behav -key {Behavioral:sim_1:Functional:ram_sim} -tclbatch {ram_sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source ram_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ram_sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 806.684 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port mode [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.ram_sim
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot ram_sim_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Feb 19 08:40:59 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Feb 19 08:40:59 2019...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ram_sim_behav -key {Behavioral:sim_1:Functional:ram_sim} -tclbatch {ram_sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source ram_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ram_sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 806.684 ; gain = 0.000
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port mode [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.ram_sim
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot ram_sim_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Feb 19 08:43:32 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Feb 19 08:43:32 2019...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ram_sim_behav -key {Behavioral:sim_1:Functional:ram_sim} -tclbatch {ram_sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source ram_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ram_sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 806.684 ; gain = 0.000
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port mode [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:34]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.ram_sim
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot ram_sim_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Feb 19 08:44:32 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Feb 19 08:44:32 2019...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ram_sim_behav -key {Behavioral:sim_1:Functional:ram_sim} -tclbatch {ram_sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source ram_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ram_sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 806.684 ; gain = 0.000
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+ERROR: [VRFC 10-91] reset is not declared [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:65]
+ERROR: [VRFC 10-1040] module ram_sim ignored due to previous errors [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:23]
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port mode [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:35]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.ram_sim
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot ram_sim_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Feb 19 08:47:44 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Feb 19 08:47:44 2019...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ram_sim_behav -key {Behavioral:sim_1:Functional:ram_sim} -tclbatch {ram_sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source ram_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ram_sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 806.684 ; gain = 0.000
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'ram_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj ram_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sources_1/new/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto 3611e2549dca46bd82fdd83994e17173 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ram_sim_behav xil_defaultlib.ram_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port WE [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:33]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port mode [C:/Users/Administrator/MIPS-CPU-TOY/cpu.srcs/sim_1/new/ram_sim.v:35]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.ram_sim
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot ram_sim_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav/xsim.dir/ram_sim_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Feb 19 08:49:33 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Feb 19 08:49:33 2019...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/MIPS-CPU-TOY/cpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ram_sim_behav -key {Behavioral:sim_1:Functional:ram_sim} -tclbatch {ram_sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source ram_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ram_sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 806.684 ; gain = 0.000
+run 15 us

@@ -21,13 +21,13 @@
 
 
 module ram(
-    input [0:31] address,
-    input [0:31] data_in,
+    input [31:0] address,
+    input [31:0] data_in,
     input mode, // word or byte (0 / 1)
     input WE,
     input clk,
     input reset,
-    output [0:31] data_out
+    output [31:0]data_out
     );
     
     parameter SIZE = 4096;

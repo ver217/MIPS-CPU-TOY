@@ -21,9 +21,8 @@
 
 
 module rom(
-    input [0:31] address,
-//    input clk,
-    output [0:31] data_out
+    input [31:2] address,
+    output [31:0] data_out
     );
     
     reg[31:0] mem[0:4095];

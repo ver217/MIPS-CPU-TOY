@@ -60,16 +60,17 @@ module top(
 	);
 	
 	ram dmem(
-		.address(aluRes[7:2]),
+		.address(aluRes),
 		.data_in(r2),
 		.clk(!clkin),
 		.WE(memWrite),
 		.reset(reset),
+		.mode(0),
 		.data_out(memOut)
 	);
 
 	rom imem(
-		.address(pc[8:2]), 
+		.address(pc), 
 //		.clk(clkin), 
 		.data_out(inst)
 	 );
