@@ -132,11 +132,12 @@ module Display(reset,clk,data,seg, AN);//数码管显示模�?
         pattern u_pattern(data32_4,seg);                     
 endmodule
 
-module pause(clk,syscall,r1,reset,r2,en,Go,AN,seg);
+module pause(clk,syscall,r1,reset,r2,en,display,Go,AN,seg);
         input clk;
         input syscall,reset,Go;
         input [31:0]r1;
         input [31:0]r2;
+        reg[31:0] data;
         output en;
         output display;
         output [7:0]AN;

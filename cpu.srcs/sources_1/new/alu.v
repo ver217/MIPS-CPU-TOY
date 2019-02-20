@@ -6,7 +6,7 @@ module alu(
     output reg [31:0] result,
     output equal
     );
-	always @(x or y or aluOp) begin
+	always @(x or y or aluOp or shamt) begin
 		case (aluOp)
 			4'b0000:
 				result <= y << shamt;

@@ -40,6 +40,12 @@ module top(
     wire [7:0] mem_seg;
 
 	wire clk_N;
+	
+	clk_dis instance_of_clk_N(
+	   .clk(clk_native),
+	   .rst(reset),
+	   .clk_out(clk_N)
+	);
 
     initial begin
         pc <= 0;
@@ -133,7 +139,6 @@ module top(
              .r1(r1),
              .reset(reset),
              .r2(r2),
-             .data(data),
              .en(en),
 			 .display(display),
              .Go(Go),
@@ -142,7 +147,7 @@ module top(
       );
 
 
-	reg select[2:0] = 0;
+	reg[2:0] select = 0;
 
 	always @(
 		show_clock_count,
@@ -159,15 +164,23 @@ module top(
 			show_syscall
 		})
 			5'b1ZZZZ: select = 0;
-			5'bZ1ZZZ: select = 1;
-			5'bZZ1ZZ: select = 2;
-			5'bZZZ1Z: select = 3;
-			5'bZZZZ1: select = 4;
+			5'b01ZZZ: select = 1;
+			5'b001ZZ: select = 2;
+			5'b0001Z: select = 3;
+			5'b00001: select = 4;
 			default: select = 3'b111;
 		endcase
 	end
 
-	always @(select) begin
+	always @(
+	   select,
+	   counter_AN,
+	   counter_seg,
+	   mem_AN,
+	   mem_seg,
+	   pause_AN,
+	   pause_seg
+    ) begin
 		if (select == 0 || select == 1 || select == 2) begin
 			AN = counter_AN;
 			seg = counter_seg;

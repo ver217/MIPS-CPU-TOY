@@ -23,29 +23,26 @@
 module clk_dis(clk,rst,clk_out);
     input clk;
     input rst;
-    output reg clk_out;//分频后时钟
+    output reg clk_out = 0;//分频后时钟
     parameter N=4;
     reg[7:0]counter;
-    always@(posedge clk or posedge rst) 
+    initial begin
+        clk_out = 1;
+        counter = 0;
+    end
+    always@(posedge clk) 
     begin
         if(rst)begin
             counter<=0;
+            clk_out<=0;
         end
         else if(counter==N-1)begin
             counter<=0;
+            clk_out<=!clk_out;
         end
         else begin
             counter<=counter+1;
         end
     end
     
-    always @(posedge clk or posedge rst)
-    begin
-        if(rst)begin
-            clk_out<=0;
-        end
-        else if(counter==N-1)begin
-            clk_out<=!clk_uot;
-        end
-    end
 endmodule
