@@ -10,14 +10,10 @@
 //reset:置0信号
 
 /*无条件跳转*/
-//jr;jr指令信号
-//jal;jal指令信号
-//jmp;jmp指令信号
+
 
 /*有条件分支跳转*/
-//beq:beq指令信号
-//bne:bne指令信号
-//equal:判断依据,运算器相等信号
+
 
 //select:输出信息控制信号
 
@@ -26,19 +22,19 @@
 //AN:七段数码显示器选择信号
 
 
-module Information_display(clk,clk_N,pause,reset,jr,jal,jmp,beq,bne,equal,select,display,AN  );
+
+
+module Information_display(clk,clk_N,pause,reset,clock_counter_en,unconditional_branch_counter_en,conditional_branch_counter_en,select,display,AN  );
       input clk;
       input clk_N;
       input pause;
       input reset;
-      
-      input jr;
-      input jal;
-      input jmp;
-      
-      input beq;
-      input bne;
-      input equal;
+  
+      input clock_counter_en;    
+      input unconditional_branch_counter_en;
+      input conditional_branch_counter_en;
+
+
       
       input [2:0]select;  
       output reg [7:0]display;
@@ -297,9 +293,8 @@ if((number&32'h0000000f)>9)
     
   
  eight_devide devide_1(clk,devide);
- Cycle_counter  counter_1(clk_N,pause,reset,cycle_number );
-unconditional_branch_counter   counter_2(clk_N,pause,reset,jr,jal,jmp,unconditional_branch_number);
-conditional_branch_counter     counter_3(clk_N,pause,reset,beq,bne,equal,conditional_branch_number);
+ Cycle_counter  counter(clk_N,pause,clock_counter_en,unconditional_branch_counter_en,conditional_branch_counter_en,reset,cycle_number,unconditional_branch_number,conditional_branch_number );
+
     
  
     
