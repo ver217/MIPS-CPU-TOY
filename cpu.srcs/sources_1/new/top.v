@@ -138,8 +138,8 @@ module top(
              .data(data),
              .en(en),
              .Go(Go),
-             .AN(AN),
-             .seg(seg)
+             .AN(pause_AN),
+             .seg(pause_seg)
       );
 
 
@@ -193,8 +193,8 @@ module top(
 		// .unconditional_branch_counter_en(),
 		// .clock_counter_en(),
 		.select(select),
-		.display(seg),
-		.AN(AN)
+		.display(counter_seg),
+		.AN(counter_AN)
 	);
 
 	assign branch = (beq & equal) | (bne & (~equal));
