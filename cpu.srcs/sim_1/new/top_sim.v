@@ -21,14 +21,19 @@
 
 
 module top_sim();
-    reg clk;
+    reg clk, go;
     top TOP(
        .clkin(clk),
        .reset(0),
-       .Go(0)
+       .Go(go)
        );
     initial begin
         clk = 1;
+        go = 0;
+        #30960
+        go = 1;
+        #10
+        go = 0;
     end   
  
     always #10 clk=~clk;
