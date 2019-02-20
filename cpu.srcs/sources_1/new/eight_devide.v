@@ -7,6 +7,7 @@ module eight_devide(clk,devide);
  reg [31:0]count;
  reg clk_M;
 initial begin
+count=0;
 devide=3'h0;
 clk_M=0;
 end

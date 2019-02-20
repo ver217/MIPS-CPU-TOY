@@ -1,12 +1,13 @@
 module top(
-    input clkin, 
+    input clk_native, 
     input reset,
     input Go,
 	input show_clock_count,
 	input show_unconditional_branch_count,
 	input show_conditional_branch_count,
 	input show_mem,
-	input show_syscall,
+	input key_up,
+	input key_down,
 	output reg[7:0] AN,
     output reg[7:0] seg
     );
@@ -39,12 +40,20 @@ module top(
 	wire [7:0] mem_AN;
     wire [7:0] mem_seg;
 
+	wire clk_N;
+	
+	clk_dis instance_of_clk_N(
+	   .clk(clk_native),
+	   .rst(reset),
+	   .clk_out(clk_N)
+	);
+
     initial begin
         pc <= 0;
         add4 <= 4;
         cnt <= 0;
     end
-	always @(posedge clkin)
+	always @(posedge clk_N)
 		begin
 			if(!reset) begin
 			    if (en) begin
@@ -89,7 +98,7 @@ module top(
 	ram dmem(
 		.address(aluRes),
 		.data_in(r2),
-		.clk(clkin),
+		.clk(clk_N),
 		.WE(memWrite),
 		.reset(reset),
 		.mode(0),
@@ -100,18 +109,11 @@ module top(
 		.address(pc), 
 		.data_out(inst)
 	 );
-	 
-//	 blk_mem_gen_0 rom(
-//	       .clka(clkin),
-//	       .ena(1),
-//	       .addra(pc[11:0] >> 2),
-//	       .douta(inst)
-//	 );
 
 	regFile regfile(
 		.RsAddr(sysMux),
 		.RtAddr(dispMux),
-		.clk(clkin), 
+		.clk(clk_N), 
 		.reset(reset), 
 		.regWriteAddr(jalMux), 
 		.regWriteData(jalMux1), 
@@ -129,53 +131,62 @@ module top(
 		.inst(inst[15:0]),
 		.data(zeroExted)
 	);
+
+	wire display;
+
 	pause pause(
-             .clk(clkin),
+             .clk(clk_N),
              .syscall(syscall),
              .r1(r1),
              .reset(reset),
              .r2(r2),
-             .data(data),
              .en(en),
+			 .display(display),
              .Go(Go),
              .AN(pause_AN),
              .seg(pause_seg)
       );
 
 
-	reg select[2:0] = 0;
+	reg[2:0] select = 0;
 
 	always @(
 		show_clock_count,
 		show_unconditional_branch_count,
 		show_conditional_branch_count,
-		show_mem,
-		show_syscall
+		show_mem
 	) begin
 		casez ({
-			show_clock_count,
-			show_unconditional_branch_count,
-			show_conditional_branch_count,
 			show_mem,
-			show_syscall
+			show_conditional_branch_count,
+			show_unconditional_branch_count,
+			show_clock_count
 		})
-			5'b1ZZZZ: select = 0;
-			5'bZ1ZZZ: select = 1;
-			5'bZZ1ZZ: select = 2;
-			5'bZZZ1Z: select = 3;
-			5'bZZZZ1: select = 4;
+			4'b1ZZZ: select = 3;
+			4'b01ZZ: select = 2;
+			4'b001Z: select = 1;
+			4'b0001: select = 0;
+			4'b0000: select = 4;
 			default: select = 3'b111;
 		endcase
 	end
 
-	always @(select) begin
+	always @(
+	   select,
+	   counter_AN,
+	   counter_seg,
+	   mem_AN,
+	   mem_seg,
+	   pause_AN,
+	   pause_seg
+    ) begin
 		if (select == 0 || select == 1 || select == 2) begin
 			AN = counter_AN;
 			seg = counter_seg;
 		end else if (select == 3) begin
 			AN = mem_AN;
 			seg = mem_seg;
-		end else if (select == 3) begin
+		end else if (select == 4) begin
 			AN = pause_AN;
 			seg = pause_seg;
 		end else begin
@@ -185,8 +196,8 @@ module top(
 	end
 
 	Information_display info(
-		.clk(clkin),
-		.clk_N(0),
+		.clk(clk_native),
+		.clk_N(clk_N),
       	.reset(reset),
 		.conditional_branch_counter_en(branch & en),
 		.unconditional_branch_counter_en(jmp & en),
@@ -205,7 +216,7 @@ module top(
 	assign memToRegMux = memToReg ? memOut : aluRes;
 	assign jalMux1 = jal ? add4 : memToRegMux;
 	assign sysMux = syscall ? 2 : inst[25:21];
-	assign dispMux = inst[20:16];
+	assign dispMux = !display ? inst[20:16] : 4;
 	assign regDstMux = regDst ? inst[15:11] : inst[20:16];
 	assign jalMux = jal ? 31 : regDstMux;
 endmodule

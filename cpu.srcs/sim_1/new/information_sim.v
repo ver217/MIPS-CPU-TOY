@@ -7,15 +7,15 @@ module information(
  
      reg clk;
      reg clk_N;
-     reg pause;
      reg reset;
-     reg jr;
-     reg jal;
-     reg jmp;
-     
-     reg beq;
-     reg bne;
-     reg equal;
+
+  
+     reg clock_counter_en;    
+     reg unconditional_branch_counter_en;
+     reg conditional_branch_counter_en;
+
+
+
      reg [2:0]select;  
      reg clk_T;
      reg [7:0]temp_counter;
@@ -34,29 +34,24 @@ wire [31:0]conditional_branch_number;
 reg cout;
 
 initial begin 
-pause=0;
+
 reset=0;
-jr=0;
-jal=0;
-jmp=0;
-beq=0;
-bne=0;
-equal=0;
+clock_counter_en=1;    
+unconditional_branch_counter_en=0;
+conditional_branch_counter_en=0;
 select=0;
 clk=0;
 clk_N=0;
  clk_T=0;
 temp_counter=0;
-#1000 pause=1;
-#1100 pause=0;
+#1000 clock_counter_en=0;
+#1100 clock_counter_en=1;
 #1200 reset=1;
 #1300 reset=0;
-#1400 jmp=1;
-#1500 jmp=0;
-#1600 beq=1;
-#1600 equal=1;
-#1700 beq=0;
-#1700 equal=0;
+#1500 unconditional_branch_counter_en=1;
+#1600 unconditional_branch_counter_en=0;
+#1700 conditional_branch_counter_en=1;
+#1800 conditional_branch_counter_en=0;
 end
 
 always #1 clk=~clk;
@@ -66,7 +61,13 @@ always #1000 select=select+1;
 
       
 
+
+
+
+
+
       
+
 
 
 
@@ -312,11 +313,9 @@ if((number&32'h0000000f)>9)
     
   
  eight_devide devide_1(clk,devide);
- Cycle_counter  counter_1(clk_N,pause,reset,cycle_number );
-unconditional_branch_counter   counter_2(clk_N,pause,reset,jr,jal,jmp,unconditional_branch_number);
-conditional_branch_counter     counter_3(clk_N,pause,reset,beq,bne,equal,conditional_branch_number);
+ Cycle_counter  counter(clk_N,clock_counter_en,unconditional_branch_counter_en,conditional_branch_counter_en,reset,cycle_number,unconditional_branch_number,conditional_branch_number );
+
     
  
-    
     
 endmodule
