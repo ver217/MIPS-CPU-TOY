@@ -26,7 +26,8 @@ module top_sim();
     reg[31:0] clk_count = 0;
     top TOP(
        .clkin(clk),
-       .reset(reset)
+       .reset(reset),
+       .Go(0)
        );
        
     initial begin

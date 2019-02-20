@@ -21,22 +21,103 @@ module Information_display(clk,clk_N,pause,reset,select,display,AN  );
       output reg [7:0]display;
       output reg [7:0]AN;
 
-wire [3:0] decimalism_number[2:0];//十进制显示
+reg [3:0] decimalism_number[2:0];//十进制显示
 wire [2:0]devide;
 reg [31:0] number;  
 
 
 wire [31:0]cycle_number;
 
-      assign
-      decimalism_number[0]=number%10,
-      decimalism_number[1]=(number/10)%10,
-      decimalism_number[2]=(number/100)%10,
-      decimalism_number[3]=(number/1000)%10,
-      decimalism_number[4]=(number/10000)%10,
-      decimalism_number[5]=(number/100000)%10,
-      decimalism_number[6]=(number/1000000)%10,
-      decimalism_number[7]=(number/10000000)%10;  
+reg cout;
+
+
+reg clk_T;
+reg [7:0]temp_counter;
+
+always @(posedge clk)begin
+if(temp_counter==255)clk_T=~clk_T;
+else temp_counter=temp_counter+1;
+end
+
+
+
+
+always @(posedge clk_T)begin
+  cout=0;
+if((number&32'h0000000f)>9)
+      begin
+      decimalism_number[0]=(number&32'h0000000f)-10;
+      cout=1;
+      end
+      else begin
+      decimalism_number[0]=(number&32'h0000000f);
+      cout=0;
+      end
+ if(((number&32'h000000f0)>>4+cout)>9)
+      begin
+      decimalism_number[1]=((number&32'h000000f0)>>4+cout)-10;
+      cout=1;
+      end
+      else begin
+      decimalism_number[1]=((number&32'h000000f0)>>4+cout);
+      cout=0;
+      end  
+ if(((number&32'h00000f00)>>8+cout)>9)
+       begin
+       decimalism_number[2]=((number&32'h00000f00)>>8+cout)-10;
+       cout=1;
+       end
+       else begin
+       decimalism_number[2]=((number&32'h00000f00)>>8+cout);
+       cout=0;
+       end 
+ if(((number&32'h0000f000)>>12+cout)>9)
+       begin
+       decimalism_number[3]=((number&32'h0000f000)>>12+cout)-10;
+       cout=1;
+       end
+       else begin
+       decimalism_number[3]=((number&32'h0000f000)>>12+cout);
+       cout=0;
+       end
+ if(((number&32'h000f0000)>>16+cout)>9)
+       begin
+       decimalism_number[4]=((number&32'h000f0000)>>16+cout)-10;
+       cout=1;
+       end
+       else begin
+       decimalism_number[4]=((number&32'h000f0000)>>16+cout);
+       cout=0;
+       end
+ if(((number&32'h00f00000)>>20+cout)>9)
+       begin
+       decimalism_number[5]=((number&32'h00f00000)>>20+cout)-10;
+       cout=1;
+       end
+       else begin
+       decimalism_number[5]=((number&32'h00f00000)>>20+cout);
+       cout=0;
+       end
+ if(((number&32'h0f000000)>>24+cout)>9)
+       begin
+       decimalism_number[6]=((number&32'h0f000000)>>24+cout)-10;
+       cout=1;
+       end
+       else begin
+       decimalism_number[6]=((number&32'h0f000000)>>24+cout);
+       cout=0;
+       end       
+ if(((number&32'hf0000000)>>28+cout)>9)
+       begin
+       decimalism_number[7]=((number&32'hf0000000)>>28+cout)-10;
+       cout=1;
+       end
+       else begin
+       decimalism_number[7]=((number&32'hf0000000)>>28+cout);
+       cout=0;
+       end  
+ end
+  
                       
  always @(posedge clk) begin  //输出信号选择
     case(select)

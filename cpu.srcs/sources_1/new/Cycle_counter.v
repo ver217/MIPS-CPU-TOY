@@ -13,8 +13,8 @@ cycle_number=0;
 end
 
 always@(posedge clk)begin
-if(pause==0) cycle_number=cycle_number;
-else if(reset==0) cycle_number=0;
+if(pause==1) cycle_number=cycle_number;
+else if(reset==1) cycle_number=0;
 else cycle_number=cycle_number+1;
 end
 

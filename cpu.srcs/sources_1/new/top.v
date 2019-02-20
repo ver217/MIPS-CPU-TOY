@@ -1,6 +1,7 @@
 module top(
     input clkin, 
-    input reset
+    input reset,
+    input Go
     );
 	reg[31:0] pc = 0, add4 = 4;
 	wire branch;
@@ -20,7 +21,10 @@ module top(
 	// wire for ext
 	wire [31:0] signedExted;
 	wire [31:0] zeroExted;
-	
+	wire [31:0] data;
+    wire en;
+    wire [31:0]AN;
+    wire [31:0]seg;
 	always @(negedge clkin)
 		begin
 			if(!reset) begin
@@ -102,6 +106,18 @@ module top(
 		.inst(inst[15:0]),
 		.data(zeroExted)
 	);
+	pause pause(
+             .clk(clkin),
+             .syscall(syscall),
+             .r1(r1),
+             .reset(reset),
+             .r2(r2),
+             .data(data),
+             .en(en),
+             .Go(Go),
+             .AN(AN),
+             .seg(seg)
+      );
 	assign branch = (beq & equal) | (bne & (~equal));
 	assign jmpMux = jmp ? jrMux : branchMux;
 	assign branchMux = branch ? (signedExted << 2) + add4 : add4;
