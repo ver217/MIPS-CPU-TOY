@@ -21,8 +21,8 @@
 
 
 module ram_sim();
-    reg[31:0] addr = 100;
-    reg[31:0] data_in = 32'b00000000_00000000_00000000_01010101;
+    reg[31:0] addr = 0;
+    reg[31:0] data_in = 32'h0000_6161;
     wire[31:0] data_out;
     reg clk = 0;
     reg reset = 0;
@@ -38,6 +38,7 @@ module ram_sim();
     
 
     always #10 clk=~clk;
+    always #100 data_in = data_in + 1;
     
     initial begin
         #100

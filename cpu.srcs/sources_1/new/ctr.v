@@ -9,6 +9,7 @@ module ctr(
     output reg regDst,
     output reg beq,
     output reg bne,
+    // output reg bgtz,
     output reg jr,
     output reg jmp,
     output reg jal,
@@ -20,6 +21,7 @@ module ctr(
 			0:	begin	// R type
 				case (inst[5:0])	// inst[5:0]
 					0: aluOp <= 0; // sll
+					// 4: aluOp <= 0; // sllv
 					3: aluOp <= 1; // sra
 					2: aluOp <= 2; // srl
 					32: aluOp <= 5; // add
@@ -30,6 +32,7 @@ module ctr(
 					39: aluOp <= 10; // nor
 					42: aluOp <= 11; // slt
 					43: aluOp <= 12; // sltu
+					// 46: aluOp <= 9; // xor
 				endcase
 				memToReg <= 0;
 				memWrite <= 0;
@@ -98,8 +101,23 @@ module ctr(
 				bne <= 1;
 				jr <= 0;
 				jmp <= 0;
-				jal <= 0;	
+				jal <= 0;
 			end
+			// 7: begin	// bgtz
+			// 	memToReg <= 0;
+			// 	memWrite <= 0;
+			// 	aluSrc <= 0;
+			// 	regWrite <= 0;
+			// 	syscall <= 0;
+			// 	signedExt <= 0;
+			// 	regDst <= 0;
+			// 	beq <= 0;
+			// 	bne <= 0;
+			// 	// bgtz <= 1;
+			// 	jr <= 0;
+			// 	jmp <= 0;
+			// 	jal <= 0;	
+			// end
 			8: begin	// addi
 				memToReg <= 0;
 				memWrite <= 0;
