@@ -154,8 +154,7 @@ module top(
 		show_clock_count,
 		show_unconditional_branch_count,
 		show_conditional_branch_count,
-		show_mem,
-		show_syscall
+		show_mem
 	) begin
 		casez ({
 			show_mem,
