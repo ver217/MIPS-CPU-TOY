@@ -13,14 +13,18 @@ module regFile(
 	assign RsData = (RsAddr == 5'b0) ? 32'b0 : regs[RsAddr];
 	assign RtData = (RtAddr == 5'b0) ? 32'b0 : regs[RtAddr];
 	integer i;
-	always @(posedge clk) begin
+	initial begin
+	   for (i = 0; i < 32; i = i + 1)
+            regs[i] <= 0;
+    end
+	always @(negedge clk) begin
 		if (!reset)	begin
 			if (regWriteEn == 1)
-				regs[regWriteAddr] = regWriteData;
+				regs[regWriteAddr] <= regWriteData;
 		end
 		else	begin
 			for (i = 0; i < 32; i = i + 1)
-				regs[i] = 0;
+				regs[i] <= 0;
 		end
 	end
 endmodule

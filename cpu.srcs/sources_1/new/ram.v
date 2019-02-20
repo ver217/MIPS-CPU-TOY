@@ -56,9 +56,9 @@ module ram(
             //                     : 32'b1;
             //     :32'b0;
     integer i;
-    initial
+    initial begin
         for (i = 0; i < SIZE; i = i + 1) mem[i] <= 0;
-    
+    end
     always @(negedge clk) begin
         if (WE) begin
             if (mode == 0)

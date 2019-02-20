@@ -3,7 +3,7 @@ module top(
     input reset,
     input Go
     );
-	reg[31:0] pc = 0, add4 = 4;
+	reg [31:0] pc, add4, cnt;
 	wire branch;
 	wire [31:0] inst;
 	wire [31:0] jmpMux, branchMux, jrMux, aluSrcMux, signedExtMux, memToRegMux, jalMux1;
@@ -25,15 +25,24 @@ module top(
     wire en;
     wire [31:0]AN;
     wire [31:0]seg;
-	always @(negedge clkin)
+    initial begin
+        pc <= 0;
+        add4 <= 4;
+        cnt <= 0;
+    end
+	always @(posedge clkin)
 		begin
 			if(!reset) begin
-				pc = jmpMux;
-				add4  =  pc+4;
+			    if (en) begin
+                    pc = jmpMux;
+                    add4  =  pc + 4;
+                    cnt <= cnt + 1;
+				end
 			end
 		else	begin
-			pc = 32'b0;
-			add4 = 32'h4;
+			pc <= 32'b0;
+			add4 <= 32'h4;
+			cnt <= 0;
 		end
 	end
 	
