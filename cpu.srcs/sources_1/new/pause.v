@@ -21,7 +21,7 @@
 
 module divider(clk, ck);
     input clk;          // 系统时钟
-    output reg ck;      // 分频后的时钟
+    output reg ck;      // 分�?�后的时�?
     parameter dely  = 500_00; // 时钟计数值，频率？？
     reg [31:0] cnt;
     initial begin
@@ -39,17 +39,17 @@ endmodule
 //3-8译码�?
 module decoder3_8(num, sel);  
        input [2: 0] num;            // 数码管编号：0~7
-       output reg  [7:0] sel;       // 7段数码管片�?�信号，低电平有�?
+       output reg  [7:0] sel;       // 7段数码�?�片??�信号，低电平有�?
        always @(num) begin
           case(num)
-              0:  sel[7:0] = 8'b01111111;//�?1个数码管�?
-              1:  sel[7:0] = 8'b10111111;//�?2个数码管�?
-              2:  sel[7:0] = 8'b11011111;//�?3个数码管�?
-              3:  sel[7:0] = 8'b11101111;//�?4个数码管�?
-              4:  sel[7:0] = 8'b11110111;//�?5个数码管�?
-              5:  sel[7:0] = 8'b11111011;//�?6个数码管�?
-              6:  sel[7:0] = 8'b11111101;//�?7个数码管�?
-              7:  sel[7:0] = 8'b11111110;//�?8个数码管�?
+              0:  sel[7:0] = 8'b01111111;//�?1�?数码管�??
+              1:  sel[7:0] = 8'b10111111;//�?2�?数码管�??
+              2:  sel[7:0] = 8'b11011111;//�?3�?数码管�??
+              3:  sel[7:0] = 8'b11101111;//�?4�?数码管�??
+              4:  sel[7:0] = 8'b11110111;//�?5�?数码管�??
+              5:  sel[7:0] = 8'b11111011;//�?6�?数码管�??
+              6:  sel[7:0] = 8'b11111101;//�?7�?数码管�??
+              7:  sel[7:0] = 8'b11111110;//�?8�?数码管�??
               default: sel[7:0] = 8'b11111111;
          endcase
      end
@@ -57,7 +57,7 @@ endmodule
 
 module pattern(SW, SG);
        input [3:0] SW;       // 16进制数字�?4位二进制编码
-       output reg [7:0] SG;       // 7段数码管驱动，低电平有效
+       output reg [7:0] SG;       // 7段数码�?�驱�?，低电平有效
        always @(SW[3:0])
          case(SW[3:0])
             0 : SG[7:0]=8'b11000000;//数字0
@@ -88,7 +88,7 @@ module Display(reset,clk,data,seg, AN);//数码管显示模�?
        output [7:0] AN;     
 	   reg [3:0] data32_4;     //数字和字母HELLO的数字的4位二进制编码
        reg [2:0] num;     //数码管编号：0~7    
-       wire ck;          // 分频后的时钟     
+       wire ck;          // 分�?�后的时�?     
 	   initial  begin
            num=0;
            data32_4=0;//计数   
@@ -138,11 +138,13 @@ module pause(clk,syscall,r1,reset,r2,en,Go,AN,seg);
         input [31:0]r1;
         input [31:0]r2;
         output en;
+        output display;
         output [7:0]AN;
         output [7:0]seg;
         wire s1;
         assign s1=(r1==34)?1:0;
         assign en=(~((~Go)&syscall&(~s1)));
+        assign display = s1 & syscall;
         Display u_Display(reset,clk,data,seg, AN);
         always @(negedge clk)begin
               if(s1&syscall) data=r2;

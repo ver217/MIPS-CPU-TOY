@@ -1,5 +1,5 @@
 module top(
-    input clkin, 
+    input clk_native, 
     input reset,
     input Go,
 	input show_clock_count,
@@ -39,12 +39,14 @@ module top(
 	wire [7:0] mem_AN;
     wire [7:0] mem_seg;
 
+	wire clk_N;
+
     initial begin
         pc <= 0;
         add4 <= 4;
         cnt <= 0;
     end
-	always @(posedge clkin)
+	always @(posedge clk_N)
 		begin
 			if(!reset) begin
 			    if (en) begin
@@ -89,7 +91,7 @@ module top(
 	ram dmem(
 		.address(aluRes),
 		.data_in(r2),
-		.clk(clkin),
+		.clk(clk_N),
 		.WE(memWrite),
 		.reset(reset),
 		.mode(0),
@@ -100,18 +102,11 @@ module top(
 		.address(pc), 
 		.data_out(inst)
 	 );
-	 
-//	 blk_mem_gen_0 rom(
-//	       .clka(clkin),
-//	       .ena(1),
-//	       .addra(pc[11:0] >> 2),
-//	       .douta(inst)
-//	 );
 
 	regFile regfile(
 		.RsAddr(sysMux),
 		.RtAddr(dispMux),
-		.clk(clkin), 
+		.clk(clk_N), 
 		.reset(reset), 
 		.regWriteAddr(jalMux), 
 		.regWriteData(jalMux1), 
@@ -129,14 +124,18 @@ module top(
 		.inst(inst[15:0]),
 		.data(zeroExted)
 	);
+
+	wire display;
+
 	pause pause(
-             .clk(clkin),
+             .clk(clk_N),
              .syscall(syscall),
              .r1(r1),
              .reset(reset),
              .r2(r2),
              .data(data),
              .en(en),
+			 .display(display),
              .Go(Go),
              .AN(pause_AN),
              .seg(pause_seg)
@@ -185,8 +184,8 @@ module top(
 	end
 
 	Information_display info(
-		.clk(clkin),
-		.clk_N(0),
+		.clk(clk_native),
+		.clk_N(clk_N),
       	.reset(reset),
 		.conditional_branch_counter_en(branch & en),
 		.unconditional_branch_counter_en(jmp & en),
@@ -205,7 +204,7 @@ module top(
 	assign memToRegMux = memToReg ? memOut : aluRes;
 	assign jalMux1 = jal ? add4 : memToRegMux;
 	assign sysMux = syscall ? 2 : inst[25:21];
-	assign dispMux = inst[20:16];
+	assign dispMux = !display ? inst[20:16] : 4;
 	assign regDstMux = regDst ? inst[15:11] : inst[20:16];
 	assign jalMux = jal ? 31 : regDstMux;
 endmodule
