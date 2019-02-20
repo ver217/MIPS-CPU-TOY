@@ -158,10 +158,10 @@ module top(
 		show_syscall
 	) begin
 		casez ({
-			show_mem
+			show_mem,
 			show_conditional_branch_count,
 			show_unconditional_branch_count,
-			show_clock_count,
+			show_clock_count
 		})
 			4'b1ZZZ: select = 3;
 			4'b01ZZ: select = 2;
