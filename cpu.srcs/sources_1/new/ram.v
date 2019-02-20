@@ -22,18 +22,21 @@
 
 module ram(
     input [31:0] address,
+    input [31:0] __address_display,
     input [31:0] data_in,
     input [1:0] mode, // word or byte or halfword (0 / 1 / 2)
     input WE,
     input clk,
     input reset,
-    output [31:0]data_out
+    output [31:0] data_out,
+    output [31:0] __data_out_display
     );
     
     parameter SIZE = 4096;
     reg[31:0] mem[0:SIZE - 1];
 
 
+    assign __data_out_display = mem[__address_display[11:2]];
     
 //    mem[address[11:2]] >> (address[1:0] << 3) & 32h'000f;
 

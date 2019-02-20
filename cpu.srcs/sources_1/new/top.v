@@ -94,15 +94,35 @@ module top(
 		.result(aluRes),
 		.equal(equal)
 	);
+
+	wire[31:0] address_display;
+	wire[31:0] data_out_display;
+
+	up_down_ctr up_down_ctr(
+		.clk_native(clk_native),
+		.key_up(key_up),
+		.key_down(key_down),
+		.address(address_display)
+	);
+
+	Display show_mem_display(
+		.reset(reset),
+		.clk(clk_native),
+		.data(data_out_display),
+		.seg(mem_seg),
+		.AN(mem_AN)
+	);
 	
 	ram dmem(
 		.address(aluRes),
+		.__address_display(address_display),
 		.data_in(r2),
 		.clk(clk_N),
 		.WE(memWrite),
 		.reset(reset),
 		.mode(0),
-		.data_out(memOut)
+		.data_out(memOut),
+		.__data_out_display(data_out_display)
 	);
 
 	rom imem(
