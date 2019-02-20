@@ -186,12 +186,11 @@ module top(
 
 	Information_display info(
 		.clk(clkin),
-		// .pause(en),
+		.clk_N(0),
       	.reset(reset),
-
-		// .conditional_branch_counter_en(),
-		// .unconditional_branch_counter_en(),
-		// .clock_counter_en(),
+		.conditional_branch_counter_en(branch & en),
+		.unconditional_branch_counter_en(jmp & en),
+		.clock_counter_en(en),
 		.select(select),
 		.display(counter_seg),
 		.AN(counter_AN)

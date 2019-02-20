@@ -24,10 +24,9 @@
 
 
 
-module Information_display(clk,clk_N,pause,reset,clock_counter_en,unconditional_branch_counter_en,conditional_branch_counter_en,select,display,AN  );
+module Information_display(clk,clk_N,reset,clock_counter_en,unconditional_branch_counter_en,conditional_branch_counter_en,select,display,AN  );
       input clk;
       input clk_N;
-      input pause;
       input reset;
   
       input clock_counter_en;    
@@ -293,7 +292,7 @@ if((number&32'h0000000f)>9)
     
   
  eight_devide devide_1(clk,devide);
- Cycle_counter  counter(clk_N,pause,clock_counter_en,unconditional_branch_counter_en,conditional_branch_counter_en,reset,cycle_number,unconditional_branch_number,conditional_branch_number );
+ Cycle_counter  counter(clk_N,clock_counter_en,unconditional_branch_counter_en,conditional_branch_counter_en,reset,cycle_number,unconditional_branch_number,conditional_branch_number );
 
     
  
