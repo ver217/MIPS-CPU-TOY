@@ -1,7 +1,12 @@
 module top(
     input clkin, 
     input reset,
-    input Go
+    input Go,
+	input show_clock_count,
+	input show_unconditional_branch_count,
+	input show_conditional_branch_count,
+	input show_mem,
+	input show_led,
     );
 	reg [31:0] pc, add4, cnt;
 	wire branch;
@@ -127,6 +132,46 @@ module top(
              .AN(AN),
              .seg(seg)
       );
+
+
+	reg select[2:0] = 0;
+
+	always @(
+		show_clock_count,
+		show_unconditional_branch_count,
+		show_conditional_branch_count,
+		show_mem,
+		show_led
+	) {
+		casez ({
+			show_clock_count,
+			show_unconditional_branch_count,
+			show_conditional_branch_count,
+			show_mem,
+			show_led
+		})
+			5'b1ZZZZ: select = 0;
+			5'bZ1ZZZ: select = 1;
+			5'bZZ1ZZ: select = 2;
+			5'bZZZ1Z: select = 0;
+			5'bZZZZ1: select = 0;
+			default: select = 3'b111;
+		endcase
+	}
+
+	Information_display info(
+		.clk(clkin),
+		// .pause(en),
+      	.reset(reset),
+
+		// .conditional_branch_counter_en(),
+		// .unconditional_branch_counter_en(),
+		// .clock_counter_en(),
+		.select(select),
+		.display(seg),
+		.AN(AN)
+	);
+
 	assign branch = (beq & equal) | (bne & (~equal));
 	assign jmpMux = jmp ? jrMux : branchMux;
 	assign branchMux = branch ? (signedExted << 2) + add4 : add4;
