@@ -1,10 +1,24 @@
 `timescale 1ns / 1ps
 //统计信息显示模块 by 史凯波
+
+/*本模块所有信号均为1有效*/
+
 //输入：
 //clk:电路板初始时钟信号
 //clk_N:分频后cpu时钟信号
 //pause:暂停计数信号（不影响显示）
 //reset:置0信号
+
+/*无条件跳转*/
+//jr;jr指令信号
+//jal;jal指令信号
+//jmp;jmp指令信号
+
+/*有条件分支跳转*/
+//beq:beq指令信号
+//bne:bne指令信号
+//equal:判断依据,运算器相等信号
+
 //select:输出信息控制信号
 
 //输出：
@@ -12,22 +26,32 @@
 //AN:七段数码显示器选择信号
 
 
-module Information_display(clk,clk_N,pause,reset,select,display,AN  );
+module Information_display(clk,clk_N,pause,reset,jr,jal,jmp,beq,bne,equal,select,display,AN  );
       input clk;
       input clk_N;
       input pause;
       input reset;
+      
+      input jr;
+      input jal;
+      input jmp;
+      
+      input beq;
+      input bne;
+      input equal;
+      
       input [2:0]select;  
       output reg [7:0]display;
       output reg [7:0]AN;
 
-reg [3:0] decimalism_number[2:0];//十进制显示
+reg [3:0] decimalism_number[7:0];//十进制显示
 wire [2:0]devide;
 reg [31:0] number;  
 
 
 wire [31:0]cycle_number;
-
+wire [31:0]unconditional_branch_number;
+wire [31:0]conditional_branch_number;
 reg cout;
 
 
@@ -35,7 +59,7 @@ reg clk_T;
 reg [7:0]temp_counter;
 
 always @(posedge clk)begin
-if(temp_counter==255)clk_T=~clk_T;
+if(temp_counter==255)begin clk_T=~clk_T;temp_counter=0;end
 else temp_counter=temp_counter+1;
 end
 
@@ -122,7 +146,9 @@ if((number&32'h0000000f)>9)
  always @(posedge clk) begin  //输出信号选择
     case(select)
       3'h0: begin number=cycle_number; end
-      3'h1: begin end
+      3'h1: begin number=unconditional_branch_number; end
+      3'h2: begin number=conditional_branch_number; end
+      3'h3:begin end
     default:  number=0;
  endcase
  end
@@ -272,8 +298,8 @@ if((number&32'h0000000f)>9)
   
  eight_devide devide_1(clk,devide);
  Cycle_counter  counter_1(clk_N,pause,reset,cycle_number );
-
-
+unconditional_branch_counter   counter_2(clk_N,pause,reset,jr,jal,jmp,unconditional_branch_number);
+conditional_branch_counter     counter_3(clk_N,pause,reset,beq,bne,equal,conditional_branch_number);
     
  
     
