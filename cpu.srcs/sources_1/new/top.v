@@ -6,7 +6,9 @@ module top(
 	input show_unconditional_branch_count,
 	input show_conditional_branch_count,
 	input show_mem,
-	input show_led,
+	input show_syscall,
+	output reg[7:0] AN,
+    output reg[7:0] seg
     );
 	reg [31:0] pc, add4, cnt;
 	wire branch;
@@ -28,8 +30,15 @@ module top(
 	wire [31:0] zeroExted;
 	wire [31:0] data;
     wire en;
-    wire [31:0]AN;
-    wire [31:0]seg;
+    wire [7:0] pause_AN;
+    wire [7:0] pause_seg;
+
+	wire [7:0] counter_AN;
+    wire [7:0] counter_seg;
+
+	wire [7:0] mem_AN;
+    wire [7:0] mem_seg;
+
     initial begin
         pc <= 0;
         add4 <= 4;
@@ -141,23 +150,39 @@ module top(
 		show_unconditional_branch_count,
 		show_conditional_branch_count,
 		show_mem,
-		show_led
-	) {
+		show_syscall
+	) begin
 		casez ({
 			show_clock_count,
 			show_unconditional_branch_count,
 			show_conditional_branch_count,
 			show_mem,
-			show_led
+			show_syscall
 		})
 			5'b1ZZZZ: select = 0;
 			5'bZ1ZZZ: select = 1;
 			5'bZZ1ZZ: select = 2;
-			5'bZZZ1Z: select = 0;
-			5'bZZZZ1: select = 0;
+			5'bZZZ1Z: select = 3;
+			5'bZZZZ1: select = 4;
 			default: select = 3'b111;
 		endcase
-	}
+	end
+
+	always @(select) begin
+		if (select == 0 || select == 1 || select == 2) begin
+			AN = counter_AN;
+			seg = counter_seg;
+		end else if (select == 3) begin
+			AN = mem_AN;
+			seg = mem_seg;
+		end else if (select == 3) begin
+			AN = pause_AN;
+			seg = pause_seg;
+		end else begin
+			AN = 0;
+			seg = 0;
+		end
+	end
 
 	Information_display info(
 		.clk(clkin),
