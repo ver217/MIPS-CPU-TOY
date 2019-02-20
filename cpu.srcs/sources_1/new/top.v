@@ -223,7 +223,7 @@ module top(
 		.unconditional_branch_counter_en(jmp & en),
 		.clock_counter_en(en),
 		.select(select),
-		.display(counter_seg),
+		.display(~counter_seg),
 		.AN(counter_AN)
 	);
 
