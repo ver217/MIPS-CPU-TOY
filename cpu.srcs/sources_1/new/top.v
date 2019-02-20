@@ -6,7 +6,8 @@ module top(
 	input show_unconditional_branch_count,
 	input show_conditional_branch_count,
 	input show_mem,
-	input show_syscall,
+	input key_up,
+	input key_down,
 	output reg[7:0] AN,
     output reg[7:0] seg
     );
@@ -157,17 +158,16 @@ module top(
 		show_syscall
 	) begin
 		casez ({
-			show_clock_count,
-			show_unconditional_branch_count,
+			show_mem
 			show_conditional_branch_count,
-			show_mem,
-			show_syscall
+			show_unconditional_branch_count,
+			show_clock_count,
 		})
-			5'b1ZZZZ: select = 0;
-			5'b01ZZZ: select = 1;
-			5'b001ZZ: select = 2;
-			5'b0001Z: select = 3;
-			5'b00001: select = 4;
+			4'b1ZZZ: select = 3;
+			4'b01ZZ: select = 2;
+			4'b001Z: select = 1;
+			4'b0001: select = 0;
+			4'b0000: select = 4;
 			default: select = 3'b111;
 		endcase
 	end
@@ -187,7 +187,7 @@ module top(
 		end else if (select == 3) begin
 			AN = mem_AN;
 			seg = mem_seg;
-		end else if (select == 3) begin
+		end else if (select == 4) begin
 			AN = pause_AN;
 			seg = pause_seg;
 		end else begin
