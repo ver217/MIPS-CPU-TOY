@@ -51,7 +51,7 @@ temp_counter=0;
 #1500 unconditional_branch_counter_en=1;
 #1600 unconditional_branch_counter_en=0;
 #1700 conditional_branch_counter_en=1;
-#1800 unconditional_branch_counter_en=0;
+#1800 conditional_branch_counter_en=0;
 end
 
 always #1 clk=~clk;
