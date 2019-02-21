@@ -239,7 +239,7 @@ module top(
 	assign memToRegMux = memToReg ? memOut : aluRes;
 	assign jalMux1 = jal ? add4 : memToRegMux;
 	assign sysMux = syscall ? 2 : inst[25:21];
-	assign dispMux = !display ? inst[20:16] : 4;
+	assign dispMux = display ? 4 : inst[20:16];
 	assign regDstMux = regDst ? inst[15:11] : inst[20:16];
 	assign jalMux = jal ? 31 : regDstMux;
 endmodule

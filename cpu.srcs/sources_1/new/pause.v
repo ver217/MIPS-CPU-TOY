@@ -22,7 +22,7 @@
 module divider(clk, ck);
     input clk;          // 系统时钟
     output reg ck;      // 分�?�后的时�?
-    parameter dely  = 500_00; // 时钟计数值，频率？？
+    parameter dely  = 50; // 时钟计数值，频率？？
     reg [31:0] cnt;
     initial begin
     cnt=0;
