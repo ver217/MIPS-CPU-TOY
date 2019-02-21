@@ -6,7 +6,7 @@ module up_down_ctr(
     input key_down,
     output reg[31:0] address = 0
     );
-s
+
     initial address = 0;
 
     reg[15:0] debounce_up_reg = 0;
@@ -24,7 +24,7 @@ s
 
     always @(
         key_up,
-        key_done,
+        key_down,
         debounce_up_reg,
         debounce_down_reg,
         address
@@ -39,7 +39,7 @@ s
         end
 
         if(
-            key_done &&
+            key_down &&
             debounce_down_reg == 0 &&
             4 <= address <= 4096
         ) begin
