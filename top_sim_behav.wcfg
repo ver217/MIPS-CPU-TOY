@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="19" />
+   <WVObjectSize size="20" />
    <wvobject db_ref_id="1" fp_name="/top_sim/TOP/cnt" type="array">
       <obj_property name="ElementShortName">cnt[31:0]</obj_property>
       <obj_property name="ObjectShortName">cnt[31:0]</obj_property>
@@ -101,5 +101,9 @@
    <wvobject db_ref_id="1" fp_name="/top_sim/Go" type="logic">
       <obj_property name="ElementShortName">Go</obj_property>
       <obj_property name="ObjectShortName">Go</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
    </wvobject>
 </wave_config>
