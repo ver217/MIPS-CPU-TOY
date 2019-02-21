@@ -4,7 +4,8 @@ module alu(
     input [3:0] aluOp,
 	input [4:0] shamt,
     output reg [31:0] result,
-    output equal
+    output equal,
+	output bleZero
     );
 	always @(x or y or aluOp or shamt) begin
 		case (aluOp)
@@ -45,4 +46,5 @@ module alu(
 		endcase
 	end
 	assign equal = (x == y);
+	assign bleZero = (x <= 0);
 endmodule
