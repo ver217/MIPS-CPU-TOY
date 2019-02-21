@@ -20,11 +20,11 @@ module up_down_ctr(
         address,
         clk_native
     ) begin
-        if (debounce_up_reg >= 0) begin
+        if (debounce_up_reg > 0) begin
             debounce_up_reg = debounce_up_reg - 1;
         end
     
-        if (debounce_down_reg >= 0) begin
+        if (debounce_down_reg > 0) begin
             debounce_down_reg = debounce_down_reg - 1;
         end
         

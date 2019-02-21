@@ -24,7 +24,7 @@ module clk_dis(clk,rst,clk_out);
     input clk;
     input rst;
     output reg clk_out = 0;//·ÖÆµºóÊ±ÖÓ
-    parameter N=4;
+    parameter N=1000;
     reg[7:0]counter;
     initial begin
         clk_out = 1;
