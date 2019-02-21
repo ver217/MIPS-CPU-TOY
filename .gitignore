@@ -5,3 +5,5 @@ cpu.cache/
 *.log
 *.jou
 *.str
+
+.Xil
