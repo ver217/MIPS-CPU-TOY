@@ -20,23 +20,23 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module clk_dis(clk,rst,clk_out);
+module clk_dis(clk,clk_out);
     input clk;
-    input rst;
+//    input rst;
     output reg clk_out = 0;//·ÖÆµºóÊ±ÖÓ
-    parameter N=1000;
-    reg[7:0]counter;
+    parameter N=100000;
+    reg[31:0]counter;
     initial begin
         clk_out = 1;
         counter = 0;
     end
     always@(posedge clk) 
     begin
-        if(rst)begin
-            counter<=0;
-            clk_out<=0;
-        end
-        else if(counter==N-1)begin
+//        if(rst)begin
+//            counter<=0;
+//            clk_out<=0;
+//        end
+        if(counter==N-1)begin
             counter<=0;
             clk_out<=!clk_out;
         end

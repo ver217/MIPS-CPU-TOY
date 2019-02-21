@@ -44,7 +44,7 @@ module top(
 	
 	clk_dis instance_of_clk_N(
 	   .clk(clk_native),
-	   .rst(reset),
+//	   .rst(reset),
 	   .clk_out(clk_N)
 	);
 
@@ -223,6 +223,7 @@ module top(
 		.clk_N(clk_N),
       	.reset(reset),
 		.conditional_branch_counter_en(branch & en),
+		
 		.unconditional_branch_counter_en(jmp & en),
 		.clock_counter_en(en),
 		.select(select),
