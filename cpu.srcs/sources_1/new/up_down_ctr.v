@@ -12,23 +12,22 @@ module up_down_ctr(
     reg[15:0] debounce_up_reg = 0;
     reg[15:0] debounce_down_reg = 0;
 
-    always @(posedge clk_native) begin
-        if (debounce_up_reg >= 0) begin
-            debounce_up_reg = debounce_up_reg - 1;
-        end
-
-        if (debounce_down_reg >= 0) begin
-            debounce_down_reg = debounce_down_reg - 1;
-        end
-    end
-
     always @(
         key_up,
         key_down,
         debounce_up_reg,
         debounce_down_reg,
-        address
+        address,
+        clk_native
     ) begin
+        if (debounce_up_reg >= 0) begin
+            debounce_up_reg = debounce_up_reg - 1;
+        end
+    
+        if (debounce_down_reg >= 0) begin
+            debounce_down_reg = debounce_down_reg - 1;
+        end
+        
         if(
             key_up &&
             debounce_up_reg == 0 &&

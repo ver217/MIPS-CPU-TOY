@@ -174,7 +174,8 @@ module top(
 		show_clock_count,
 		show_unconditional_branch_count,
 		show_conditional_branch_count,
-		show_mem
+		show_mem,
+		reset
 	) begin
 		casez ({
 			show_mem,
@@ -189,6 +190,8 @@ module top(
 			4'b0000: select = 4;
 			default: select = 3'b111;
 		endcase
+		
+		if (reset) select = 3'b111;
 	end
 
 	always @(
@@ -202,7 +205,7 @@ module top(
     ) begin
 		if (select == 0 || select == 1 || select == 2) begin
 			AN = counter_AN;
-			seg = counter_seg;
+			seg = ~counter_seg;
 		end else if (select == 3) begin
 			AN = mem_AN;
 			seg = mem_seg;
@@ -210,8 +213,8 @@ module top(
 			AN = pause_AN;
 			seg = pause_seg;
 		end else begin
-			AN = 0;
-			seg = 0;
+			AN = 8'hff;
+			seg = 8'hff;
 		end
 	end
 
@@ -223,7 +226,7 @@ module top(
 		.unconditional_branch_counter_en(jmp & en),
 		.clock_counter_en(en),
 		.select(select),
-		.display(~counter_seg),
+		.display(counter_seg),
 		.AN(counter_AN)
 	);
 
