@@ -22,7 +22,7 @@
 module divider(clk, ck);
     input clk;          // 系统时钟
     output reg ck;      // 分�?�后的时�?
-    parameter dely  = 500_00; // 时钟计数值，频率？？
+    parameter dely  = 50000; // 时钟计数值，频率？？
     reg [31:0] cnt;
     initial begin
     cnt=0;
@@ -132,8 +132,9 @@ module Display(reset,clk,data,seg, AN);//数码管显示模�?
         pattern u_pattern(data32_4,seg);                     
 endmodule
 
-module pause(clk,syscall,r1,reset,r2,en,display,Go,AN,seg);
+module pause(clk,sys_clk,syscall,r1,reset,r2,en,display,Go,AN,seg);
         input clk;
+        input sys_clk;
         input syscall,reset,Go;
         input [31:0]r1;
         input [31:0]r2;
@@ -146,8 +147,8 @@ module pause(clk,syscall,r1,reset,r2,en,display,Go,AN,seg);
         assign s1=(r1==34)?1:0;
         assign en=(~((~Go)&syscall&(~s1)));
         assign display = s1 & syscall;
-        Display u_Display(reset,clk,data,seg, AN);
-        always @(negedge clk)begin
+        Display u_Display(reset,sys_clk,data,seg, AN);
+        always @(posedge clk)begin
               if(s1&syscall) data=r2;
         end
         

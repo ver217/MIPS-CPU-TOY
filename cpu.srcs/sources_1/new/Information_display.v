@@ -47,95 +47,24 @@ reg [31:0] number;
 wire [31:0]cycle_number;
 wire [31:0]unconditional_branch_number;
 wire [31:0]conditional_branch_number;
-reg cout;
 
 
-reg clk_T;
-reg [7:0]temp_counter;
+
+
+
+
 
 always @(posedge clk)begin
-if(temp_counter==255)begin clk_T=~clk_T;temp_counter=0;end
-else temp_counter=temp_counter+1;
-end
-
-
-
-
-always @(posedge clk_T)begin
-  cout=0;
-if((number&32'h0000000f)>9)
-      begin
-      decimalism_number[0]=(number&32'h0000000f)-10;
-      cout=1;
-      end
-      else begin
-      decimalism_number[0]=(number&32'h0000000f);
-      cout=0;
-      end
- if(((number&32'h000000f0)>>4+cout)>9)
-      begin
-      decimalism_number[1]=((number&32'h000000f0)>>4+cout)-10;
-      cout=1;
-      end
-      else begin
-      decimalism_number[1]=((number&32'h000000f0)>>4+cout);
-      cout=0;
-      end  
- if(((number&32'h00000f00)>>8+cout)>9)
-       begin
-       decimalism_number[2]=((number&32'h00000f00)>>8+cout)-10;
-       cout=1;
-       end
-       else begin
-       decimalism_number[2]=((number&32'h00000f00)>>8+cout);
-       cout=0;
-       end 
- if(((number&32'h0000f000)>>12+cout)>9)
-       begin
-       decimalism_number[3]=((number&32'h0000f000)>>12+cout)-10;
-       cout=1;
-       end
-       else begin
-       decimalism_number[3]=((number&32'h0000f000)>>12+cout);
-       cout=0;
-       end
- if(((number&32'h000f0000)>>16+cout)>9)
-       begin
-       decimalism_number[4]=((number&32'h000f0000)>>16+cout)-10;
-       cout=1;
-       end
-       else begin
-       decimalism_number[4]=((number&32'h000f0000)>>16+cout);
-       cout=0;
-       end
- if(((number&32'h00f00000)>>20+cout)>9)
-       begin
-       decimalism_number[5]=((number&32'h00f00000)>>20+cout)-10;
-       cout=1;
-       end
-       else begin
-       decimalism_number[5]=((number&32'h00f00000)>>20+cout);
-       cout=0;
-       end
- if(((number&32'h0f000000)>>24+cout)>9)
-       begin
-       decimalism_number[6]=((number&32'h0f000000)>>24+cout)-10;
-       cout=1;
-       end
-       else begin
-       decimalism_number[6]=((number&32'h0f000000)>>24+cout);
-       cout=0;
-       end       
- if(((number&32'hf0000000)>>28+cout)>9)
-       begin
-       decimalism_number[7]=((number&32'hf0000000)>>28+cout)-10;
-       cout=1;
-       end
-       else begin
-       decimalism_number[7]=((number&32'hf0000000)>>28+cout);
-       cout=0;
-       end  
+ decimalism_number[0]=number&32'h0000000f;
+ decimalism_number[1]=(number&32'h000000f0)>>4;
+ decimalism_number[2]=(number&32'h00000f00)>>8;
+ decimalism_number[3]=(number&32'h0000f000)>>12;
+ decimalism_number[4]=(number&32'h000f0000)>>16;
+ decimalism_number[5]=(number&32'h00f00000)>>20;
+ decimalism_number[6]=(number&32'h0f000000)>>24;
+ decimalism_number[7]=(number&32'hf0000000)>>28;
  end
+
   
                       
  always @(posedge clk) begin  //Êä³öĞÅºÅÑ¡Ôñ
@@ -163,6 +92,12 @@ if((number&32'h0000000f)>9)
               7: begin display = 8'h07; end
               8: begin display = 8'h7f; end
               9: begin display = 8'h6f; end
+              10:begin display =8'b01110111;end//A
+              11:begin display=8'b01111100;end//B
+              12:begin display=8'b00111001;end//C
+              13:begin display=8'b01011110;end
+              14:begin display=8'b01111001;end
+              15:begin display=8'b01110001; end
               default:  display = 8'h00;
            endcase
            end
@@ -180,6 +115,12 @@ if((number&32'h0000000f)>9)
                      7: begin display = 8'h07; end
                      8: begin display = 8'h7f; end
                      9: begin display = 8'h6f; end
+                     10:begin display =8'b01110111;end//A
+                     11:begin display=8'b01111100;end//B
+                     12:begin display=8'b00111001;end//C
+                     13:begin display=8'b01011110;end
+                     14:begin display=8'b01111001;end
+                     15:begin display=8'b01110001; end             
                      default:  display = 8'h00;
                   endcase
                   end      
@@ -197,6 +138,12 @@ if((number&32'h0000000f)>9)
                      7: begin display = 8'h07; end
                      8: begin display = 8'h7f; end
                      9: begin display = 8'h6f; end
+                     10:begin display =8'b01110111;end//A
+                     11:begin display=8'b01111100;end//B
+                     12:begin display=8'b00111001;end//C
+                     13:begin display=8'b01011110;end
+                     14:begin display=8'b01111001;end
+                     15:begin display=8'b01110001; end             
                      default:  display = 8'h00;
                   endcase
                   end   
@@ -214,6 +161,12 @@ if((number&32'h0000000f)>9)
                      7: begin display = 8'h07; end
                      8: begin display = 8'h7f; end
                      9: begin display = 8'h6f; end
+                     10:begin display =8'b01110111;end//A
+                     11:begin display=8'b01111100;end//B
+                     12:begin display=8'b00111001;end//C
+                     13:begin display=8'b01011110;end
+                     14:begin display=8'b01111001;end
+                     15:begin display=8'b01110001; end            
                      default:  display = 8'h00;
                   endcase
                   end 
@@ -231,6 +184,12 @@ if((number&32'h0000000f)>9)
                      7: begin display = 8'h07; end
                      8: begin display = 8'h7f; end
                      9: begin display = 8'h6f; end
+                     10:begin display =8'b01110111;end//A
+                     11:begin display=8'b01111100;end//B
+                     12:begin display=8'b00111001;end//C
+                     13:begin display=8'b01011110;end
+                     14:begin display=8'b01111001;end
+                     15:begin display=8'b01110001; end             
                      default:  display = 8'h00;
                   endcase
                   end                     
@@ -248,6 +207,12 @@ if((number&32'h0000000f)>9)
                                   7: begin display = 8'h07; end
                                   8: begin display = 8'h7f; end
                                   9: begin display = 8'h6f; end
+                                  10:begin display =8'b01110111;end//A
+                                  11:begin display=8'b01111100;end//B
+                                  12:begin display=8'b00111001;end//C
+                                  13:begin display=8'b01011110;end
+                                  14:begin display=8'b01111001;end
+                                  15:begin display=8'b01110001; end             
                                   default:  display = 8'h00;
                                endcase
                                end 
@@ -265,6 +230,12 @@ if((number&32'h0000000f)>9)
                                   7: begin display = 8'h07; end
                                   8: begin display = 8'h7f; end
                                   9: begin display = 8'h6f; end
+                                  10:begin display =8'b01110111;end//A
+                                  11:begin display=8'b01111100;end//B
+                                  12:begin display=8'b00111001;end//C
+                                  13:begin display=8'b01011110;end
+                                  14:begin display=8'b01111001;end
+                                  15:begin display=8'b01110001; end                  
                                   default:  display = 8'h00;
                                endcase
                                end
@@ -282,6 +253,12 @@ if((number&32'h0000000f)>9)
                                   7: begin display = 8'h07; end
                                   8: begin display = 8'h7f; end
                                   9: begin display = 8'h6f; end
+                                  10:begin display =8'b01110111;end//A
+                                  11:begin display=8'b01111100;end//B
+                                  12:begin display=8'b00111001;end//C
+                                  13:begin display=8'b01011110;end
+                                  14:begin display=8'b01111001;end
+                                  15:begin display=8'b01110001; end                
                                   default:  display = 8'h00;
                                endcase
                                end                               

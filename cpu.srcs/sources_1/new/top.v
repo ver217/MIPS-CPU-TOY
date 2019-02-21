@@ -8,6 +8,7 @@ module top(
 	input show_mem,
 	input key_up,
 	input key_down,
+	input[4:0] level,
 	output reg[7:0] AN,
     output reg[7:0] seg
     );
@@ -42,11 +43,6 @@ module top(
 
 	wire clk_N;
 	
-	clk_dis instance_of_clk_N(
-	   .clk(clk_native),
-	   .rst(reset),
-	   .clk_out(clk_N)
-	);
 
     initial begin
         pc <= 0;
@@ -94,15 +90,35 @@ module top(
 		.result(aluRes),
 		.equal(equal)
 	);
+
+	wire[31:0] address_display;
+	wire[31:0] data_out_display;
+
+	up_down_ctr up_down_ctr(
+		.clk_native(clk_native),
+		.key_up(key_up),
+		.key_down(key_down),
+		.address(address_display)
+	);
+
+	Display show_mem_display(
+		.reset(reset),
+		.clk(clk_native),
+		.data(data_out_display),
+		.seg(mem_seg),
+		.AN(mem_AN)
+	);
 	
 	ram dmem(
 		.address(aluRes),
+		.__address_display(address_display),
 		.data_in(r2),
 		.clk(clk_N),
 		.WE(memWrite),
 		.reset(reset),
 		.mode(0),
-		.data_out(memOut)
+		.data_out(memOut),
+		.__data_out_display(data_out_display)
 	);
 
 	rom imem(
@@ -136,6 +152,7 @@ module top(
 
 	pause pause(
              .clk(clk_N),
+             .sys_clk(clk_native),
              .syscall(syscall),
              .r1(r1),
              .reset(reset),
@@ -154,7 +171,8 @@ module top(
 		show_clock_count,
 		show_unconditional_branch_count,
 		show_conditional_branch_count,
-		show_mem
+		show_mem,
+		reset
 	) begin
 		casez ({
 			show_mem,
@@ -169,6 +187,8 @@ module top(
 			4'b0000: select = 4;
 			default: select = 3'b111;
 		endcase
+		
+		if (reset) select = 3'b111;
 	end
 
 	always @(
@@ -182,7 +202,7 @@ module top(
     ) begin
 		if (select == 0 || select == 1 || select == 2) begin
 			AN = counter_AN;
-			seg = counter_seg;
+			seg = ~counter_seg;
 		end else if (select == 3) begin
 			AN = mem_AN;
 			seg = mem_seg;
@@ -190,8 +210,8 @@ module top(
 			AN = pause_AN;
 			seg = pause_seg;
 		end else begin
-			AN = 0;
-			seg = 0;
+			AN = 8'hff;
+			seg = 8'hff;
 		end
 	end
 
@@ -200,11 +220,18 @@ module top(
 		.clk_N(clk_N),
       	.reset(reset),
 		.conditional_branch_counter_en(branch & en),
+		
 		.unconditional_branch_counter_en(jmp & en),
 		.clock_counter_en(en),
 		.select(select),
 		.display(counter_seg),
 		.AN(counter_AN)
+	);
+	
+	var_f_divider var_f_divider(
+	   .clk_native(clk_native),
+	   .level(level),
+	   .clk_out(clk_N)
 	);
 
 	assign branch = (beq & equal) | (bne & (~equal));
@@ -216,7 +243,7 @@ module top(
 	assign memToRegMux = memToReg ? memOut : aluRes;
 	assign jalMux1 = jal ? add4 : memToRegMux;
 	assign sysMux = syscall ? 2 : inst[25:21];
-	assign dispMux = !display ? inst[20:16] : 4;
+	assign dispMux = display ? 4 : inst[20:16];
 	assign regDstMux = regDst ? inst[15:11] : inst[20:16];
 	assign jalMux = jal ? 31 : regDstMux;
 endmodule

@@ -33,7 +33,6 @@ module top_sim();
         .show_unconditional_branch_count(0),
         .show_conditional_branch_count(0),
         .show_mem(0),
-        .show_syscall(1),
         .AN(AN),
         .seg(seg)
        );
