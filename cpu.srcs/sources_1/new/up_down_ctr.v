@@ -8,7 +8,7 @@ module up_down_ctr(
     );
     wire key_up_done, key_down_done;
     anti_shake as1(clk_native, key_up, key_up_done);
-    anti_shake as2(clk_nativek, key_down, key_down_done);
+    anti_shake as2(clk_native, key_down, key_down_done);
     initial address = 0;
 
 //    reg[15:0] debounce_up_reg = 0;
