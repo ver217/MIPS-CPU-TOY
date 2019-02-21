@@ -46,5 +46,5 @@ module alu(
 		endcase
 	end
 	assign equal = (x == y);
-	assign bleZero = (x <= 0);
+	assign bleZero = $signed(x) <= 0;
 endmodule
