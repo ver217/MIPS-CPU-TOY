@@ -92,6 +92,12 @@ always @(posedge clk)begin
               7: begin display = 8'h07; end
               8: begin display = 8'h7f; end
               9: begin display = 8'h6f; end
+              10:begin display =8'b01110111;end//A
+              11:begin display=8'b01111100;end//B
+              12:begin display=8'b00111001;end//C
+              13:begin display=8'b01011110;end
+              14:begin display=8'b01111001;end
+              15:begin display=8'b01110001; end
               default:  display = 8'h00;
            endcase
            end
@@ -109,6 +115,12 @@ always @(posedge clk)begin
                      7: begin display = 8'h07; end
                      8: begin display = 8'h7f; end
                      9: begin display = 8'h6f; end
+                     10:begin display =8'b01110111;end//A
+                     11:begin display=8'b01111100;end//B
+                     12:begin display=8'b00111001;end//C
+                     13:begin display=8'b01011110;end
+                     14:begin display=8'b01111001;end
+                     15:begin display=8'b01110001; end             
                      default:  display = 8'h00;
                   endcase
                   end      
@@ -126,6 +138,12 @@ always @(posedge clk)begin
                      7: begin display = 8'h07; end
                      8: begin display = 8'h7f; end
                      9: begin display = 8'h6f; end
+                     10:begin display =8'b01110111;end//A
+                     11:begin display=8'b01111100;end//B
+                     12:begin display=8'b00111001;end//C
+                     13:begin display=8'b01011110;end
+                     14:begin display=8'b01111001;end
+                     15:begin display=8'b01110001; end             
                      default:  display = 8'h00;
                   endcase
                   end   
@@ -143,6 +161,12 @@ always @(posedge clk)begin
                      7: begin display = 8'h07; end
                      8: begin display = 8'h7f; end
                      9: begin display = 8'h6f; end
+                     10:begin display =8'b01110111;end//A
+                     11:begin display=8'b01111100;end//B
+                     12:begin display=8'b00111001;end//C
+                     13:begin display=8'b01011110;end
+                     14:begin display=8'b01111001;end
+                     15:begin display=8'b01110001; end            
                      default:  display = 8'h00;
                   endcase
                   end 
@@ -160,6 +184,12 @@ always @(posedge clk)begin
                      7: begin display = 8'h07; end
                      8: begin display = 8'h7f; end
                      9: begin display = 8'h6f; end
+                     10:begin display =8'b01110111;end//A
+                     11:begin display=8'b01111100;end//B
+                     12:begin display=8'b00111001;end//C
+                     13:begin display=8'b01011110;end
+                     14:begin display=8'b01111001;end
+                     15:begin display=8'b01110001; end             
                      default:  display = 8'h00;
                   endcase
                   end                     
@@ -177,6 +207,12 @@ always @(posedge clk)begin
                                   7: begin display = 8'h07; end
                                   8: begin display = 8'h7f; end
                                   9: begin display = 8'h6f; end
+                                  10:begin display =8'b01110111;end//A
+                                  11:begin display=8'b01111100;end//B
+                                  12:begin display=8'b00111001;end//C
+                                  13:begin display=8'b01011110;end
+                                  14:begin display=8'b01111001;end
+                                  15:begin display=8'b01110001; end             
                                   default:  display = 8'h00;
                                endcase
                                end 
@@ -194,6 +230,12 @@ always @(posedge clk)begin
                                   7: begin display = 8'h07; end
                                   8: begin display = 8'h7f; end
                                   9: begin display = 8'h6f; end
+                                  10:begin display =8'b01110111;end//A
+                                  11:begin display=8'b01111100;end//B
+                                  12:begin display=8'b00111001;end//C
+                                  13:begin display=8'b01011110;end
+                                  14:begin display=8'b01111001;end
+                                  15:begin display=8'b01110001; end                  
                                   default:  display = 8'h00;
                                endcase
                                end
@@ -211,6 +253,12 @@ always @(posedge clk)begin
                                   7: begin display = 8'h07; end
                                   8: begin display = 8'h7f; end
                                   9: begin display = 8'h6f; end
+                                  10:begin display =8'b01110111;end//A
+                                  11:begin display=8'b01111100;end//B
+                                  12:begin display=8'b00111001;end//C
+                                  13:begin display=8'b01011110;end
+                                  14:begin display=8'b01111001;end
+                                  15:begin display=8'b01110001; end                
                                   default:  display = 8'h00;
                                endcase
                                end                               

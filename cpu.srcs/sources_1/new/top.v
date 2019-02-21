@@ -156,6 +156,7 @@ module top(
 
 	pause pause(
              .clk(clk_N),
+             .sys_clk(clk_native),
              .syscall(syscall),
              .r1(r1),
              .reset(reset),

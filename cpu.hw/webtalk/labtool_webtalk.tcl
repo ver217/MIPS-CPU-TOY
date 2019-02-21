@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir D:/MIPS-CPU-TOY/cpu.hw/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Thu Feb 21 09:09:55 2019" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Thu Feb 21 10:43:33 2019" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "Vivado v2015.2 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "1266856" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,13 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "cac6e330904a5efeb20eb5c4ae3c5691" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "1fad9d14-eec5-4db8-a188-b3ba90db57e4" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "2" -context "software_version_and_target_device"
-webtalk_add_data -client project -key os_name -value "Microsoft Windows 7 , 64-bit" -context "user_environment"
-webtalk_add_data -client project -key os_release -value "Service Pack 1  (build 7601)" -context "user_environment"
-webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz" -context "user_environment"
-webtalk_add_data -client project -key cpu_speed -value "3192 MHz" -context "user_environment"
-webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
-webtalk_add_data -client project -key system_ram -value "8.000 GB" -context "user_environment"
+webtalk_add_data -client project -key project_iteration -value "5" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 7 , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "Service Pack 1  (build 7601)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz" -context "user_environment"
@@ -31,8 +25,5 @@ webtalk_register_client -client labtool
 webtalk_add_data -client labtool -key cable -value "Digilent/Nexys4DDR/15000000" -context "labtool\\usage"
 webtalk_add_data -client labtool -key chain -value "13631093" -context "labtool\\usage"
 webtalk_add_data -client labtool -key pgmcnt -value "01:00:00" -context "labtool\\usage"
-webtalk_add_data -client labtool -key cable -value "Digilent/Nexys4DDR/15000000" -context "labtool\\usage"
-webtalk_add_data -client labtool -key chain -value "13631093" -context "labtool\\usage"
-webtalk_add_data -client labtool -key pgmcnt -value "02:00:00" -context "labtool\\usage"
-webtalk_transmit -clientid 395121800 -regid "" -xml D:/MIPS-CPU-TOY/cpu.hw/webtalk/usage_statistics_ext_labtool.xml -html D:/MIPS-CPU-TOY/cpu.hw/webtalk/usage_statistics_ext_labtool.html -wdm D:/MIPS-CPU-TOY/cpu.hw/webtalk/usage_statistics_ext_labtool.wdm -intro "<H3>LABTOOL Usage Report</H3><BR>"
+webtalk_transmit -clientid 2552629099 -regid "" -xml D:/MIPS-CPU-TOY/cpu.hw/webtalk/usage_statistics_ext_labtool.xml -html D:/MIPS-CPU-TOY/cpu.hw/webtalk/usage_statistics_ext_labtool.html -wdm D:/MIPS-CPU-TOY/cpu.hw/webtalk/usage_statistics_ext_labtool.wdm -intro "<H3>LABTOOL Usage Report</H3><BR>"
 webtalk_terminate
