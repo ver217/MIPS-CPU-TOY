@@ -30,19 +30,17 @@ module up_down_ctr(
         
         if(
             key_up &&
-            debounce_up_reg == 0 &&
-            0 <= address <= 4092
+            debounce_up_reg == 0
         ) begin
-            address = address + 4;
+            address = address > 4091 ? address : address + 4;
             debounce_up_reg = 16'hFFFF;
         end
 
         if(
             key_down &&
-            debounce_down_reg == 0 &&
-            4 <= address <= 4096
+            debounce_down_reg == 0
         ) begin
-            address = address - 4;
+            address = address > 3 ? address - 4 : address;
             debounce_down_reg = 16'hFFFF;
         end
     end
