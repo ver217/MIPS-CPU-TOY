@@ -8,6 +8,7 @@ module top(
 	input show_mem,
 	input key_up,
 	input key_down,
+	input[4:0] level,
 	output reg[7:0] AN,
     output reg[7:0] seg
     );
@@ -42,11 +43,6 @@ module top(
 
 	wire clk_N;
 	
-	clk_dis instance_of_clk_N(
-	   .clk(clk_native),
-//	   .rst(reset),
-	   .clk_out(clk_N)
-	);
 
     initial begin
         pc <= 0;
@@ -230,6 +226,12 @@ module top(
 		.select(select),
 		.display(counter_seg),
 		.AN(counter_AN)
+	);
+	
+	var_f_divider var_f_divider(
+	   .clk_native(clk_native),
+	   .level(level),
+	   .clk_out(clk_N)
 	);
 
 	assign branch = (beq & equal) | (bne & (~equal));
