@@ -34,10 +34,11 @@ module var_f_divider(
         clk_out = 1;
     end
     always @(posedge clk_native) begin
-        cnt = cnt + 1;
         if(cnt >= d) begin
-            clk_out = ~clk_out;
-            cnt = 0;
+            clk_out <= ~clk_out;
+            cnt <= 0;
+        end else begin
+            cnt <= cnt + 1;
         end
     end
 endmodule
