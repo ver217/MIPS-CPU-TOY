@@ -3,103 +3,56 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="top_sim_behav.wdb" id="1">
+      <db_ref path="up_down_ctr_sim_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="top_sim" />
+            <top_module name="up_down_ctr_sim" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="19" />
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/cnt" type="array">
-      <obj_property name="ElementShortName">cnt[31:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <WVObjectSize size="10" />
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/key_up" type="logic">
+      <obj_property name="ElementShortName">key_up</obj_property>
+      <obj_property name="ObjectShortName">key_up</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/clk" type="logic">
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/key_down" type="logic">
+      <obj_property name="ElementShortName">key_down</obj_property>
+      <obj_property name="ObjectShortName">key_down</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/pc" type="array">
-      <obj_property name="ElementShortName">pc[31:0]</obj_property>
-      <obj_property name="ObjectShortName">pc[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/addr" type="array">
+      <obj_property name="ElementShortName">addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/up_down_ctr/key_up" type="logic">
+      <obj_property name="ElementShortName">key_up</obj_property>
+      <obj_property name="ObjectShortName">key_up</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/inst" type="array">
-      <obj_property name="ElementShortName">inst[31:0]</obj_property>
-      <obj_property name="ObjectShortName">inst[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/up_down_ctr/key_down" type="logic">
+      <obj_property name="ElementShortName">key_down</obj_property>
+      <obj_property name="ObjectShortName">key_down</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/mem[0]" type="array">
-      <obj_property name="ElementShortName">[0][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[0][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/up_down_ctr/clk_native" type="logic">
+      <obj_property name="ElementShortName">clk_native</obj_property>
+      <obj_property name="ObjectShortName">clk_native</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/mem[1]" type="array">
-      <obj_property name="ElementShortName">[1][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[1][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/mem[2]" type="array">
-      <obj_property name="ElementShortName">[2][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[2][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/mem[3]" type="array">
-      <obj_property name="ElementShortName">[3][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[3][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/mem[4]" type="array">
-      <obj_property name="ElementShortName">[4][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[4][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/mem[5]" type="array">
-      <obj_property name="ElementShortName">[5][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[5][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/mem[6]" type="array">
-      <obj_property name="ElementShortName">[6][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[6][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/mem[7]" type="array">
-      <obj_property name="ElementShortName">[7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[7][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/data_in" type="array">
-      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
-      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/dmem/address" type="array">
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/up_down_ctr/address" type="array">
       <obj_property name="ElementShortName">address[31:0]</obj_property>
       <obj_property name="ObjectShortName">address[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/regfile/regs[4]" type="array">
-      <obj_property name="ElementShortName">[4][31:0]</obj_property>
-      <obj_property name="ObjectShortName">regs[4][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/up_down_ctr/debounce_up_reg" type="array">
+      <obj_property name="ElementShortName">debounce_up_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">debounce_up_reg[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/regfile/regs[19]" type="array">
-      <obj_property name="ElementShortName">[19][31:0]</obj_property>
-      <obj_property name="ObjectShortName">regs[19][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/TOP/instance_of_clk_N/clk_out" type="logic">
-      <obj_property name="ElementShortName">clk_out</obj_property>
-      <obj_property name="ObjectShortName">clk_out</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/top_sim/Go" type="logic">
-      <obj_property name="ElementShortName">Go</obj_property>
-      <obj_property name="ObjectShortName">Go</obj_property>
+   <wvobject db_ref_id="1" fp_name="/up_down_ctr_sim/up_down_ctr/debounce_down_reg" type="array">
+      <obj_property name="ElementShortName">debounce_down_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">debounce_down_reg[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>
