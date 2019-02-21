@@ -18,10 +18,10 @@ module top(
 	wire [31:0] jmpMux, branchMux, jrMux, aluSrcMux, signedExtMux, memToRegMux, jalMux1;
 	wire [4:0] sysMux, dispMux, regDstMux, jalMux;
 	// wire for controller
-	wire memToReg, memWrite, aluSrc, regWrite, syscall, signedExt, regDst, beq, bne, jr, jmp, jal, blez, sb;
+	wire memToReg, memWrite, aluSrc, regWrite, syscall, signedExt, regDst, beq, bne, jr, jmp, jal, bgtz;
 	wire [3:0] aluOp;
 	// wire for alu
-	wire equal, bleZero;
+	wire equal, bgtZero;
 	wire [31:0] aluRes;
 	// wire for rom
 	wire [31:0] memOut;
@@ -42,6 +42,8 @@ module top(
     wire [7:0] mem_seg;
 
 	wire clk_N;
+
+	wire[1:0] mem_mode;
 	
 
     initial begin
@@ -80,8 +82,8 @@ module top(
 		.jmp(jmp),
 		.jal(jal),
 		.aluOp(aluOp),
-		.blez(blez),
-		.sb(sb)
+		.bgtz(bgtz),
+		.mem_mode(mem_mode)
 	);
 	
 	alu alu(
@@ -91,7 +93,7 @@ module top(
 		.shamt(inst[10:6]),
 		.result(aluRes),
 		.equal(equal),
-		.bleZero(bleZero)
+		.bgtZero(bgtZero)
 	);
 
 	wire[31:0] address_display;
@@ -119,7 +121,7 @@ module top(
 		.clk(clk_N),
 		.WE(memWrite),
 		.reset(reset),
-		.mode({1'b0, sb}),
+		.mode(mem_mode),
 		.data_out(memOut),
 		.__data_out_display(data_out_display)
 	);
@@ -237,7 +239,7 @@ module top(
 	   .clk_out(clk_N)
 	);
 
-	assign branch = (beq & equal) | (bne & (~equal)) | (blez & bleZero);
+	assign branch = (beq & equal) | (bne & (~equal)) | (bgtz & bgtZero);
 	assign jmpMux = jmp ? jrMux : branchMux;
 	assign branchMux = branch ? (signedExted << 2) + add4 : add4;
 	assign jrMux = jr ? r1 : {add4[31:28], inst[25:0], 2'b00};

@@ -67,14 +67,6 @@ module ram(
             if (mode == 0)
                 mem[address[11:2]] = data_in;
             else if (mode == 1)
-                // if (address[1:0] == 0)
-                //     mem[address[11:2]] = {data_in[7:0], mem[address[11:2]][23:0]};
-                // else if (address[1:0] == 1)
-                //     mem[address[11:2]] = {mem[address[11:2]][31:24], data_in[7:0], mem[address[11:2]][15:0]};
-                // else if (address[1:0] == 2)
-                //     mem[address[11:2]] = {mem[address[11:2]][31:16], data_in[7:0], mem[address[11:2]][7:0]};
-                // else if (address[1:0] == 3)
-                //     mem[address[11:2]] = {mem[address[11:2]][31:8], data_in[7:0]};
                 mem[address[11:2]] = (data_in[7:0] << {address[1:0], 3'b000}) | (mem[address[11:2]] & ~(32'h0000_00ff << {address[1:0], 3'b000}));
             else
                 mem[address[11:2]] = (data_in[15:0] << {address[1], 4'b0000}) | (mem[address[11:2]] & ~(32'h0000_ffff << {address[1], 4'b0000}));

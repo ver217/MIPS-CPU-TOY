@@ -5,7 +5,7 @@ module alu(
 	input [4:0] shamt,
     output reg [31:0] result,
     output equal,
-	output bleZero
+	output bgtZero
     );
 	always @(x or y or aluOp or shamt) begin
 		case (aluOp)
@@ -46,5 +46,5 @@ module alu(
 		endcase
 	end
 	assign equal = (x == y);
-	assign bleZero = (x <= 0);
+	assign bgtZero = ($signed(x) > 0);
 endmodule
